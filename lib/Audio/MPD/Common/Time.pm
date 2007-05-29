@@ -7,7 +7,7 @@
 #
 #
 
-package POE::Component::Client::MPD::Time;
+package Audio::MPD::Common::Time;
 
 use warnings;
 use strict;
@@ -27,11 +27,11 @@ __PACKAGE__->mk_accessors
 # Constructor
 
 #
-# my $status = POE::Component::Client::MPD::Time->new( $time )
+# my $status = Audio::MPD::Common::Time->new( $time )
 #
-# The constructor for the class POE::Component::Client::MPD::Time. $time is
-# the time value (on the "time" line) of what the output MPD server returns
-# to the status command.
+# The constructor for the class Audio::MPD::Common::Time. $time is
+# the time value (on the "time" line) of what the output MPD server
+# returns to the status command.
 #
 sub new {
     my ($class, $time) = @_;

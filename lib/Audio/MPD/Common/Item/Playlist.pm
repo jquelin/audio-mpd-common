@@ -7,12 +7,12 @@
 #
 #
 
-package POE::Component::Client::MPD::Item::Playlist;
+package Audio::MPD::Common::Item::Playlist;
 
 use strict;
 use warnings;
 
-use base qw[ Class::Accessor::Fast POE::Component::Client::MPD::Item ];
+use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ playlist ] );
 
 #our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
@@ -20,6 +20,7 @@ __PACKAGE__->mk_accessors( qw[ playlist ] );
 1;
 
 __END__
+
 
 =head1 NAME
 

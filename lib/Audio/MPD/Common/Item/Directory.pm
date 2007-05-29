@@ -7,12 +7,12 @@
 #
 #
 
-package POE::Component::Client::MPD::Item::Directory;
+package Audio::MPD::Common::Item::Directory;
 
 use strict;
 use warnings;
 
-use base qw[ Class::Accessor::Fast POE::Component::Client::MPD::Item ];
+use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ directory ] );
 
 #our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
@@ -20,6 +20,7 @@ __PACKAGE__->mk_accessors( qw[ directory ] );
 1;
 
 __END__
+
 
 =head1 NAME
 
@@ -40,7 +41,7 @@ hash ref with one pre-defined key, namely the directory name.
 =head1 PUBLIC METHODS
 
 This module only has a C<new()> constructor, which should only be called by
-C<POE::Component::Client::MPD::Item>'s constructor.
+C<Audio::MPD::Common::Item>'s constructor.
 
 The only other public method is an accessor: directory().
 

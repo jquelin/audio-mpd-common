@@ -7,7 +7,7 @@
 #
 #
 
-package POE::Component::Client::MPD::Item::Song;
+package Audio::MPD::Common::Item::Song;
 
 use strict;
 use warnings;
@@ -15,7 +15,7 @@ use warnings;
 use overload '""' => \&as_string;
 use Readonly;
 
-use base qw[ Class::Accessor::Fast POE::Component::Client::MPD::Item ];
+use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ album artist file id pos title track time ] );
 
 #our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
@@ -52,6 +52,7 @@ sub as_string {
 
 __END__
 
+
 =head1 NAME
 
 Audio::MPD::Common::Item::Song - a song object with some audio tags
@@ -64,6 +65,12 @@ hash ref with some pre-defined keys, namely some audio tags.
 
 
 =head1 PUBLIC METHODS
+
+This module has a C<new()> constructor, which should only be called by
+C<Audio::MPD::Common::Item>'s constructor.
+
+The only other public methods are the accessors - see below.
+
 
 =head2 Accessors
 

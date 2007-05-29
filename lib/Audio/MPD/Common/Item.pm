@@ -7,13 +7,13 @@
 #
 #
 
-package POE::Component::Client::MPD::Item;
+package Audio::MPD::Common::Item;
 
 use strict;
 use warnings;
-use POE::Component::Client::MPD::Item::Directory;
-use POE::Component::Client::MPD::Item::Playlist;
-use POE::Component::Client::MPD::Item::Song;
+use Audio::MPD::Common::Item::Directory;
+use Audio::MPD::Common::Item::Playlist;
+use Audio::MPD::Common::Item::Song;
 
 #our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
 
@@ -27,9 +27,9 @@ sub new {
     my %lowcase;
     @lowcase{ map { lc } keys %params } = values %params;
 
-    return POE::Component::Client::MPD::Item::Song->new(\%lowcase)      if exists $params{file};
-    return POE::Component::Client::MPD::Item::Directory->new(\%lowcase) if exists $params{directory};
-    return POE::Component::Client::MPD::Item::Playlist->new(\%lowcase) if exists $params{playlist};
+    return Audio::MPD::Common::Item::Song->new(\%lowcase)      if exists $params{file};
+    return Audio::MPD::Common::Item::Directory->new(\%lowcase) if exists $params{directory};
+    return Audio::MPD::Common::Item::Playlist->new(\%lowcase)  if exists $params{playlist};
 }
 
 1;
@@ -66,8 +66,10 @@ Note that the only sub worth it in this class is the constructor:
 
 =item new( key => val [, key => val [, ...] ] )
 
-Create and return either an C<POE::Component::Client::MPD::Item::Song> or an
-C<POE::Component::Client::MPD::Item::Directory> object.
+Create and return either an C<Audio::MPD::Common::Item::Song>, an
+C<Audio::MPD::Common::Item::Directory> or an C<Audio::MPD::Common::Playlist>
+object, depending on the existence of a key C<file>, C<directory> or
+C<playlist> (respectively).
 
 =back
 

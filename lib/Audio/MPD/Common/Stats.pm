@@ -7,7 +7,7 @@
 #
 #
 
-package POE::Component::Client::MPD::Stats;
+package Audio::MPD::Common::Stats;
 
 use warnings;
 use strict;
@@ -22,7 +22,6 @@ __PACKAGE__->mk_accessors
 
 __END__
 
-=pod
 
 =head1 NAME
 

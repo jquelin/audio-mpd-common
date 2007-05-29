@@ -7,12 +7,12 @@
 #
 #
 
-package POE::Component::Client::MPD::Status;
+package Audio::MPD::Common::Status;
 
 use warnings;
 use strict;
 
-use POE::Component::Client::MPD::Time;
+use Audio::MPD::Common::Time;
 
 use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors
@@ -26,15 +26,15 @@ __PACKAGE__->mk_accessors
 # Constructor
 
 #
-# my $status = POE::Component::Client::MPD::Status->new( \%kv )
+# my $status = Audio::MPD::Common::Status->new( \%kv )
 #
-# The constructor for the class POE::Component::Client::MPD::Status. %kv is
+# The constructor for the class Audio::MPD::Common::Status. %kv is
 # a cooked output of what MPD server returns to the status command.
 #
 sub new {
     my ($class, $kv) = @_;
     my %kv = %$kv;
-    $kv{time} = POE::Component::Client::MPD::Time->new( delete $kv{time} );
+    $kv{time} = Audio::MPD::Common::Time->new( delete $kv{time} );
     bless \%kv, $class;
     return \%kv;
 }
@@ -42,6 +42,7 @@ sub new {
 1;
 
 __END__
+
 
 =head1 NAME
 
