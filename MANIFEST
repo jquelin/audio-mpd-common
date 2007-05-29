@@ -1,6 +1,5 @@
 Build.PL
 Changes
-DESIGN
 lib/POE/Component/Client/MPD.pm
 lib/POE/Component/Client/MPD/Collection.pm
 lib/POE/Component/Client/MPD/Commands.pm
@@ -48,4 +47,3 @@ t/mpd-test/music/dir1/title-artist.ogg
 t/mpd-test/music/dir2/album.ogg
 t/mpd-test/music/title.ogg
 t/mpd-test/playlists/test.m3u
-TODO
