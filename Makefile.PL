@@ -25,7 +25,7 @@ WriteMakefile(
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => [
-		'Audio-MPD-Common-*', 'MANIFEST.bak'
+		'Audio-MPD-Common-*', 'MANIFEST.bak',
 		map { ( '*/' x $_ ) . '*~' } 0..6
 	] },
 );
