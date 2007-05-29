@@ -10,7 +10,7 @@ lib/Audio/MPD/Common/Status.pm
 lib/Audio/MPD/Common/Time.pm
 LICENSE
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 META.yml
 README
 t/00-load.t
