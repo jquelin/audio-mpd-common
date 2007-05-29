@@ -11,12 +11,12 @@
 use strict;
 use warnings;
 
-use POE::Component::Client::MPD::Time;
+use Audio::MPD::Common::Time;
 use Test::More tests => 14;
 
 #
 # formatted output
-my $time = POE::Component::Client::MPD::Time->new( '126:225' );
+my $time = Audio::MPD::Common::Time->new( '126:225' );
 is( $time->sofar,   '2:06', 'sofar() formats time so far' );
 is( $time->left,    '1:39', 'left() formats remaining time' );
 is( $time->total,   '3:45', 'sofar() formats time so far' );
@@ -43,7 +43,7 @@ is( $time->seconds_total, 225, 'seconds_total() gives time total in secs' );
 
 #
 # testing null time
-$time = POE::Component::Client::MPD::Time->new( '126:0' );
+$time = Audio::MPD::Common::Time->new( '126:0' );
 is( $time->percent, '0.0', 'percent() defaults to 0' );
 
 exit;

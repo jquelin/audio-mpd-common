@@ -11,7 +11,7 @@
 use strict;
 use warnings;
 
-use POE::Component::Client::MPD::Stats;
+use Audio::MPD::Common::Stats;
 use Test::More tests => 8;
 
 
@@ -25,8 +25,8 @@ my %kv = (
     db_update   => 1175631570,
 );
 
-my $s = POE::Component::Client::MPD::Stats->new( \%kv );
-isa_ok( $s, 'POE::Component::Client::MPD::Stats', 'object creation' );
+my $s = Audio::MPD::Common::Stats->new( \%kv );
+isa_ok( $s, 'Audio::MPD::Common::Stats', 'object creation' );
 is( $s->artists,     3,          'accessor: artists' );
 is( $s->albums,      2,          'accessor: albums' );
 is( $s->songs,       4,          'accessor: songs' );

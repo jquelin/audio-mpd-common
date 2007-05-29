@@ -11,7 +11,7 @@
 use strict;
 use warnings;
 
-use POE::Component::Client::MPD::Status;
+use Audio::MPD::Common::Status;
 use Test::More tests => 14;
 
 
@@ -31,9 +31,9 @@ my %kv = (
     error          => 'problems opening audio device',
 );
 
-my $s = POE::Component::Client::MPD::Status->new( \%kv );
-isa_ok( $s,       'POE::Component::Client::MPD::Status', 'object creation' );
-isa_ok( $s->time, 'POE::Component::Client::MPD::Time',   'accessor: time' );
+my $s = Audio::MPD::Common::Status->new( \%kv );
+isa_ok( $s,             'Audio::MPD::Common::Status',    'object creation' );
+isa_ok( $s->time,       'Audio::MPD::Common::Time',      'accessor: time' );
 is( $s->volume,         66,                              'accessor: volume' );
 is( $s->repeat,         1,                               'accessor: repeat' );
 is( $s->random,         0,                               'accessor: random' );
@@ -46,3 +46,5 @@ is( $s->songid,         11,                              'accessor: songid' );
 is( $s->bitrate,        127,                             'accessor: bitrate' );
 is( $s->audio,          '44100:16:2',                    'accessor: audio' );
 is( $s->error,          'problems opening audio device', 'accessor: error' );
+
+exit;
