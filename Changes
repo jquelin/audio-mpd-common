@@ -1,0 +1,123 @@
+Revision history for POE-Component-Client-MPD
+
+High-level changelog
+====================
+
+0.6.x  pococm-coll implementation
+0.5.x  pococm-playlist implementation
+0.4.x  pre-events, data transform, more pococm-commands implemented
+0.3.x  post-events, helper classes, more pococm-commands implemented
+0.2.x  pococm-commands
+0.1.x  pococm-conn cleaning + features, pococm-message
+0.0.x  imported stuff from audio::mpd + porting to poe
+
+
+Low-level changelog
+===================
+
+0.6.0 Mon May 28 13:51:54 CEST 2007
+ - new events handled: coll.all_items, coll.all_items_simple, coll.items_in_dir
+ - all songs & directories retrieval in collection implemented (with tests)
+
+**
+
+0.5.3 Mon May 28 11:14:45 CEST 2007
+ - new events handled: pl.load, pl.save, pl.rm
+ - all playlist file management implemented (with tests)
+
+0.5.2 Sun May 27 16:12:51 CEST 2007
+ - changing license to perl
+ - new events handled: pl.shuffle, pl.swap, pl.swapid, pl.move, pl.moveid
+ - all playlist changing order implemented (with tests)
+
+0.5.1 Tue May 22 19:20:55 CEST 2007
+ - new events handled: pl.deleteid, pl.crop
+ - all playlist insertion / removal implemented (with tests)
+
+0.5.0 Tue May 22 18:16:01 CEST 2007
+ - new events handled: pl.as_items, pl.items_changed_since
+ - all playlist info retrieval implemented (with tests)
+
+**
+
+0.4.2 Mon May 21 18:39:07 CEST 2007
+ - new events handled:
+    . urlhandlers
+    . volume
+    . repeat, random, fade
+    . song, songid
+ - which means that all general commands are now handled!
+   (except password of course)
+
+0.4.1 Sun May 20 12:21:08 CEST 2007
+ - possibility to add transform to whole data instead of having to use post-callbacks
+ - new events handled: kill, version
+ - improved non-regression test suite
+
+0.4.0 Sun May 13 18:19:07 CEST 2007
+ - possibility to use pre-events
+ - new events handled:
+    . updatedb, seek, seekid
+    . pl.add, pl.delete, pl.clear
+
+**
+
+0.3.1 Sun May 13 14:55:42 CEST 2007
+ - new events handled:
+    . current, status
+    . play, playid, pause, stop, next, prev
+
+
+0.3.0 Sun May 13 14:03:50 CEST 2007
+ - pococm now supports post callbacks, for post-treatments
+ - new helper classes: pococm-time, pococm-status, pococm-stats
+ - new event handled: stats
+
+**
+
+0.2.0 Sun May 13 12:30:58 CEST 2007
+ - new module handling general commands: pococm-commands
+ - new events handled:
+    . output_enable
+    . output_disable
+ - serious pod cleaning
+ - improved test framework
+
+**
+
+0.1.2 Sat May 12 19:30:11 CEST 2007
+ - pococm-conn implements all cookings ($AS_ITEMS, $AS_KV)
+ - pococm-conn now spawns an error if:
+    . connection can't be made
+    . remote server isn't mpd
+ - added tests for pococm-conn
+ - new item available: pococmi-playlist
+
+0.1.1 Sat May 12 13:53:55 CEST 2007
+ - pococm-request renamed in pococm-message
+ - messages now use dot (.) instead of colon (:)
+ - splitted ServerInput in pococm-conn
+ - pococm-conn implements $STRIP_FIRST cooking
+
+0.1.0 Thu May 10 20:53:30 CEST 2007
+ - new helper class: pococm-request
+ - migrated api to use it to pass data around
+
+**
+
+0.0.3 Thu May 10 19:11:56 CEST 2007
+ - added test framework taken from audio::mpd
+ - updated this framework to be poe-aware
+ - first functional test: coll:all_files
+
+0.0.2 Wed May  9 18:14:12 CEST 2007
+ - missing prereq readonly
+ - tests for pococm-item
+
+0.0.1 Tue May  8 18:00:57 CEST 2007
+ - first version based on audio::mpd, ported to poe.
+ - connection to mpd done by pococ-tcp.
+ - first commands implemented: coll:all_files, pl:add, pl:delete.
+ - test client available: bin/client.pl
+ - almost no tests. :-(
+
