@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -26,7 +26,7 @@ __END__
 
 =head1 NAME
 
-POE::Component::Client::MPD::Stats - class representing MPD stats
+Audio::MPD::Common::Stats - class representing MPD stats
 
 
 =head1 SYNOPSIS
@@ -37,12 +37,11 @@ POE::Component::Client::MPD::Stats - class representing MPD stats
 =head1 DESCRIPTION
 
 The MPD server maintains some general information. Those information can be
-queried with the C<stats> event of C<POCOCM>. This method fires back an
-event with a C<POCOCM::Message>, which C<data()> is an C<POCOCM::Stats> object,
-containing all relevant information.
+queried with the mpd modules. Some of those information are served to you as
+an C<Audio::MPD::Common::Status> object.
 
-Note that an C<POCOCM::Stats> object does B<not> update itself regularly,
-and thus should be used immediately.
+Note that an C<Audio::MPD::Common::Stats> object does B<not> update itself
+regularly, and thus should be used immediately.
 
 
 =head1 METHODS
@@ -53,12 +52,11 @@ and thus should be used immediately.
 
 =item new( %kv )
 
-The C<new()> method is the constructor for the C<POCOCM::Status> class.
-It is called internally by C<PCOCOM::Commands>, with the result of the
-C<stats> command sent to MPD server.
+The C<new()> method is the constructor for the C<Audio::MPD::Common::Stats>
+class.
 
-Note: one should B<never> ever instantiate an C<POCOCM::Stats> object
-directly - use the C<stats> event of C<POCOCM>.
+Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Stats>
+object directly - use the mpd modules instead.
 
 =back
 
@@ -108,15 +106,19 @@ Last database update in UNIX time.
 
 
 Please note that those accessors are read-only: changing a value will B<not>
-change the current settings of MPD server. Use C<POCOCM> events to alter
-the settings.
+change the current settings of MPD server. Use the mpd modules to alter the
+settings.
 
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR

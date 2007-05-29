@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -39,21 +39,22 @@ __END__
 
 =head1 NAME
 
-POE::Component::Client::MPD::Item - a generic collection item
+Audio::MPD::Common::Item - a generic collection item
 
 
 =head1 SYNOPSIS
 
-    my $item = POE::Component::Client::MPD::Item->new( %params );
+    my $item = Audio::MPD::Common::Item->new( %params );
 
 
 =head1 DESCRIPTION
 
-C<POE::Component::Client::MPD::Item> is a virtual class representing a generic
-item of mpd's collection. It can be either a song or a directory. Depending on
-the params given to C<new>, it will create and return an
-C<POE::Component::Client::MPD::Item::Song> or an
-C<POE::Component::Client::MPD::Item::Directory> object. Currently, the
+C<Audio::MPD::Common::Item> is a virtual class representing a generic
+item of mpd's collection. It can be either a song, a directory or a playlist.
+
+Depending on the params given to C<new>, it will create and return an
+C<Audio::MPD::Common::Item::Song>, an C<Audio::MPD::Common::Item::Directory>
+or an C<Audio::MPD::Common::Playlist> object. Currently, the
 discrimination is done on the existence of the C<file> key of C<%params>.
 
 
@@ -73,9 +74,13 @@ C<POE::Component::Client::MPD::Item::Directory> object.
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR

@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -43,11 +43,9 @@ sub new {
 
 __END__
 
-=pod
-
 =head1 NAME
 
-POE::Component::Client::MPD::Status - class representing MPD status
+Audio::MPD::Common::Status - class representing MPD status
 
 
 =head1 SYNOPSIS
@@ -58,12 +56,11 @@ POE::Component::Client::MPD::Status - class representing MPD status
 =head1 DESCRIPTION
 
 The MPD server maintains some information on its current state. Those
-information can be queried with the C<status()> message of C<POCOCM>.
-This method returns a C<POCOCM::Status> object, containing all
-relevant information.
+information can be queried with mpd modules. Some of those information
+are served to you as an C<Audio::MPD::Common::Status> object.
 
-Note that a C<POCOCM::Status> object does B<not> update itself regularly,
-and thus should be used immediately.
+Note that an C<Audio::MPD::Common::Status> object does B<not> update
+itself regularly, and thus should be used immediately.
 
 
 =head1 METHODS
@@ -74,12 +71,11 @@ and thus should be used immediately.
 
 =item new( \%kv )
 
-The C<new()> method is the constructor for the C<POCOCM::Status> class.
-It is called internally by the C<status()> message handler of C<POCOCM>,
-with the result of the C<status> command sent to MPD server.
+The C<new()> method is the constructor for the C<Audio::MPD::Common::Status>
+class.
 
-Note: one should B<never> ever instantiate an C<POCOCM::Status> object
-directly - use the C<status()> message of C<POCOCM>.
+Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Status>
+object directly - use the mpd modules instead.
 
 =back
 
@@ -143,8 +139,8 @@ The state of MPD server. Either C<play>, C<stop> or C<pause>.
 
 =item $status->time()
 
-A C<POCOCM::Time> object, representing the time elapsed / remainging and
-total. See the associated pod for more details.
+An C<Audio::MPD::Common::Time> object, representing the time elapsed /
+remainging and total. See the associated pod for more details.
 
 
 =item $status->volume()
@@ -160,15 +156,19 @@ The crossfade in seconds.
 =back
 
 Please note that those accessors are read-only: changing a value will B<not>
-change the current settings of MPD server. Use C<POCOCM> messages to
-alter the settings.
+change the current settings of MPD server. Use the mpd modules to alter the
+settings.
 
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR

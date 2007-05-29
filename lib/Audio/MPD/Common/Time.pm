@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -86,11 +86,9 @@ sub new {
 
 __END__
 
-=pod
-
 =head1 NAME
 
-POE::Component::Client::MPD::Time - class representing time of current song
+Audio::MPD::Common::Time - class representing time of current song
 
 
 =head1 SYNOPSIS
@@ -101,13 +99,13 @@ POE::Component::Client::MPD::Time - class representing time of current song
 
 =head1 DESCRIPTION
 
-C<POCOCM::Status> returns some time information with the C<time()>
+C<Audio::MPD::Common::Status> returns some time information with the C<time()>
 accessor. This information relates to the elapsed time of the current song,
 as well as the remaining and total time. This information is encapsulated
-in a C<POCOCM::Time> object.
+in an C<Audio::MPD::Common::Time> object.
 
-Note that an C<POCOCM::Time> object does B<not> update itself regularly,
-and thus should be used immediately.
+Note that an C<Audio::MPD::Common::Time> object does B<not> update itself
+regularly, and thus should be used immediately.
 
 
 =head1 METHODS
@@ -118,19 +116,18 @@ and thus should be used immediately.
 
 =item new( $time )
 
-The C<new()> method is the constructor for the C<POCOCM::Time> class.
-It is called internally during the C<POCOCM::Status> object creation,
-with the C<time> line of the C<status> command sent to MPD server.
+The C<new()> method is the constructor for the C<Audio::MPD::Common::Time>
+class.
 
-Note: one should B<never> ever instantiate an C<POCOCM::Time> object
-directly - use the C<time()> method of C<POCOCM::Status>.
+Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Time>
+object directly - use the mpd modules instead.
 
 =back
 
 
 =head2 Accessors
 
-Once created, one can access to the following members of the object:
+Once created, one can access the following members of the object:
 
 =over 4
 
@@ -149,7 +146,7 @@ according values in seconds.
 
 =item detailled values:
 
-If you want to cook your own value, then the following methods can help.
+If you want to cook your own value, then the following methods can help:
 C<sofar_secs()> and C<sofar_mins()> return the seconds and minutes elapsed.
 Same for C<left_secs()> and C<left_mins()> (time remaining), C<total_secs()>
 and C<total_mins()>. (total song length)
@@ -159,15 +156,19 @@ and C<total_mins()>. (total song length)
 
 
 Please note that those accessors are read-only: changing a value will B<not>
-change the current state of MPD server. Use C<Audio::MPD> methods to alter
-the song playing.
+change the current settings of MPD server. Use the mpd modules to alter the
+settings.
 
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR

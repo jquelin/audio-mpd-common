@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -54,12 +54,12 @@ __END__
 
 =head1 NAME
 
-POE::Component::Client::MPD::Item::Song - a song object with some audio tags
+Audio::MPD::Common::Item::Song - a song object with some audio tags
 
 
 =head1 DESCRIPTION
 
-C<POE::Component::Client::MPD::Item::Song> is more a placeholder for a
+C<Audio::MPD::Common::Item::Song> is more a placeholder for a
 hash ref with some pre-defined keys, namely some audio tags.
 
 
@@ -102,9 +102,13 @@ possibility always exist of course, since it's a path.
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR

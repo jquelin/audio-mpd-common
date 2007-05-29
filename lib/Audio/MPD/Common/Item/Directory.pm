@@ -1,5 +1,5 @@
 #
-# This file is part of POE::Component::Client::MPD.
+# This file is part of Audio::MPD::Common
 # Copyright (c) 2007 Jerome Quelin, all rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,7 @@ __END__
 
 =head1 NAME
 
-POE::Component::Client::MPD::Item::Directory - a directory object
+Audio::MPD::Common::Item::Directory - a directory object
 
 
 =head1 SYNOPSIS
@@ -33,7 +33,7 @@ POE::Component::Client::MPD::Item::Directory - a directory object
 
 =head1 DESCRIPTION
 
-C<POE::Component::Client::MPD::Item::Directory> is more a placeholder for a
+C<Audio::MPD::Common::Item::Directory> is more a placeholder for a
 hash ref with one pre-defined key, namely the directory name.
 
 
@@ -47,9 +47,13 @@ The only other public method is an accessor: directory().
 
 =head1 SEE ALSO
 
-For all related information (bug reporting, mailing-list, pointers to
-MPD and POE, etc.), refer to C<POE::Component::Client::MPD>'s pod,
-section C<SEE ALSO>
+=over 4
+
+=item L<Audio::MPD>
+
+=item L<POE::Component::Client::MPD>
+
+=back
 
 
 =head1 AUTHOR
