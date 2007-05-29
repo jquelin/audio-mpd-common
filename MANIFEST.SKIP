@@ -36,9 +36,4 @@
 #   Mac OSX SMB mount metadata files
 \B\._
 # Avoid archives of this distribution
-\bPOE-Component-Client-MPD-[\d\.\_]+
-
-# Avoid test mpd files
-t/mpd-test/mpd.conf$
-t/mpd-test/state
-t/mpd-test/music.db
+\bAudio-MPD-Common-[\d\.\_]+

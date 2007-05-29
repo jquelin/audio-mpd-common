@@ -1,17 +1,19 @@
-POE::Component::Client::MPD
-===========================
+Audio::MPD::Common
+==================
 
-POE::Component::Client::MPD is a perl module for developing MPD (Music Player
-Daemon) clients (or any other scripts that control the MPD server) based on the
-POE framework.
+Audio::MPD::Common is a bunch of common classes used by both Audio::MPD
+and POE::Component::Client::MPD (two modules meant to access Music
+Player Daemon, aka mpd). Since those classes are independent of the
+runloop (poe or non-poe aware), Audio::MPD::Common comes to the rescue.
+
+Note that those classes are not meant to be use by anyone outside of
+those two modules.
 
 Read more about MPD on http://www.musicpd.org/
-Read more about POE on http://poe.perl.org/
+Read more about the afore-mentioned modules on:
+ - http://search.cpan.org/~jquelin/Audio-MPD/
+ - http://search.cpan.org/~jquelin/POE-Component-Client-MPD/
 
-
-POCOCOM is currently a work-in-progress!
-It is not supposed to be complete, nor to be clean or a state-of-the-art
-poe module.
 
 
 INSTALLATION
@@ -40,17 +42,17 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the perldoc
 command.
 
-    perldoc POE::Component::Client::MPD
+    perldoc Audio::MPD::Common
 
 You can also look for information at:
   . Search CPAN
-        http://search.cpan.org/dist/POE-Component-Client-MPD
+        http://search.cpan.org/dist/Audio-MPD-Common
   . CPAN Request Tracker:
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=POE-Component-Client-MPD
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Audio-MPD-Common
   . AnnoCPAN, annotated CPAN documentation:
-        http://annocpan.org/dist/POE-Component-Client-MPD
+        http://annocpan.org/dist/Audio-MPD-Common
   . CPAN Ratings:
-        http://cpanratings.perl.org/d/POE-Component-Client-MPD
+        http://cpanratings.perl.org/d/Audio-MPD-Common
 
 
 
@@ -61,3 +63,4 @@ Copyright (c) 2007 Jerome Quelin, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
