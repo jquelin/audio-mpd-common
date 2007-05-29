@@ -1,5 +1,6 @@
 Build.PL
 Changes
+lib/Audio/MPD/Common.pm
 lib/Audio/MPD/Common/Item.pm
 lib/Audio/MPD/Common/Item/Directory.pm
 lib/Audio/MPD/Common/Item/Playlist.pm
