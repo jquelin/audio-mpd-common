@@ -17,7 +17,7 @@ use Audio::MPD::Common::Time;
 use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors
     ( qw[ audio bitrate error playlist playlistlength random
-          repeat song songid state time volume xfade ] );
+          repeat song songid state time volume updating_db xfade ] );
 
 #our ($VERSION) = '$Rev: 5865 $' =~ /(\d+)/;
 
@@ -142,6 +142,11 @@ The state of MPD server. Either C<play>, C<stop> or C<pause>.
 
 An C<Audio::MPD::Common::Time> object, representing the time elapsed /
 remainging and total. See the associated pod for more details.
+
+
+=item $status->updating_db()
+
+An integer, representing the current update job.
 
 
 =item $status->volume()

@@ -12,7 +12,7 @@ use strict;
 use warnings;
 
 use Audio::MPD::Common::Status;
-use Test::More tests => 14;
+use Test::More tests => 15;
 
 
 my %kv = (
@@ -29,6 +29,7 @@ my %kv = (
     bitrate        => 127,
     audio          => '44100:16:2',
     error          => 'problems opening audio device',
+    updating_db    => 1,
 );
 
 my $s = Audio::MPD::Common::Status->new( \%kv );
@@ -46,5 +47,6 @@ is( $s->songid,         11,                              'accessor: songid' );
 is( $s->bitrate,        127,                             'accessor: bitrate' );
 is( $s->audio,          '44100:16:2',                    'accessor: audio' );
 is( $s->error,          'problems opening audio device', 'accessor: error' );
+is( $s->updating_db,    1,                               'accessor: updating_db' );
 
 exit;
