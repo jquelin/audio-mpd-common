@@ -11,7 +11,7 @@ package Audio::MPD::Common;
 
 use warnings;
 use strict;
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 
 1;
 
