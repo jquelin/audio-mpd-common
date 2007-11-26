@@ -1,6 +1,6 @@
 ---
 name: Audio-MPD-Common
-version: 0.1.1
+version: 0.1.2
 author:
   - 'Jerome Quelin <jquelin@cpan.org>'
 abstract: a bunch of common helper classes for mpd
@@ -10,13 +10,19 @@ resources:
 requires:
   Class::Accessor: 0
   Readonly: 0
-  perl: 5.8.0
+  perl: 5.008
 build_requires:
+  Class::Accessor: 0
+  Readonly: 0
   Test::More: 0
+  perl: 5.008
+recommends:
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
 provides:
   Audio::MPD::Common:
     file: lib/Audio/MPD/Common.pm
-    version: 0.1.1
+    version: 0.1.2
   Audio::MPD::Common::Item:
     file: lib/Audio/MPD/Common/Item.pm
   Audio::MPD::Common::Item::Directory:
@@ -31,7 +37,7 @@ provides:
     file: lib/Audio/MPD/Common/Status.pm
   Audio::MPD::Common::Time:
     file: lib/Audio/MPD/Common/Time.pm
-generated_by: Module::Build version 0.2806
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
