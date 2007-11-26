@@ -21,12 +21,19 @@ my $builder = Module::Build->new (
         'Audio-MPD-Common-*', 'MANIFEST.bak',
         map { ( '*/' x $_ ) . '*~' } 0..6 ],
     build_requires => {
-        'Test::More'  => 0,
+        'Class::Accessor' => 0,
+        'Readonly'        => 0,
+        'Test::More'      => 0,
+        'perl'            => '5.008',
     },
     requires => {
         'Class::Accessor' => 0,
         'Readonly'        => 0,
-        'perl'            => '5.8.0',
+        'perl'            => '5.008',
+    },
+    recommends     => {
+        'Test::Pod'           => 0,
+        'Test::Pod::Coverage' => 0,
     },
 );
 
