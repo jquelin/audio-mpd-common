@@ -16,7 +16,7 @@ use overload '""' => \&as_string;
 use Readonly;
 
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
-__PACKAGE__->mk_accessors( qw[ album artist file id pos title track time ] );
+__PACKAGE__->mk_accessors( qw[ album artist date file genre id pos title track time ] );
 
 #our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
 
@@ -74,10 +74,10 @@ The only other public methods are the accessors - see below.
 
 =head2 Accessors
 
-The following methods are the accessors to their respective named fields:
-C<album()>, C<artist()>, C<file()>, C<id>, C<pos>, C<title()>, C<track()>,
-C<time()>. You can call them either with no arg to get the value, or with
-an arg to replace the current value.
+The following methods are the accessors to their respective named
+fields: C<album()>, C<artist()>, C<dat()>, C<file()>, C<genre()>, C<id>,
+C<pos>, C<title()>, C<track()>, C<time()>. You can call them either with
+no arg to get the value, or with an arg to replace the current value.
 
 
 =head2 Methods
