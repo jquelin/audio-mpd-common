@@ -1,6 +1,6 @@
 ---
 name: Audio-MPD-Common
-version: 0.1.2
+version: 0.1.3
 author:
   - 'Jerome Quelin <jquelin@cpan.org>'
 abstract: a bunch of common helper classes for mpd
@@ -22,7 +22,7 @@ recommends:
 provides:
   Audio::MPD::Common:
     file: lib/Audio/MPD/Common.pm
-    version: 0.1.2
+    version: 0.1.3
   Audio::MPD::Common::Item:
     file: lib/Audio/MPD/Common/Item.pm
   Audio::MPD::Common::Item::Directory:
