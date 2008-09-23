@@ -2,6 +2,8 @@
 \bRCS\b
 \bCVS\b
 ,v$
+\B\.git\b
+\B\.gitignore$
 \B\.svn\b
 \B\.cvsignore$
 
@@ -26,6 +28,7 @@
 \.tmp$
 \.old$
 \.bak$
+\.swp$
 \#$
 \.#
 \.rej$
