@@ -12,7 +12,7 @@ use strict;
 use warnings;
 
 use Audio::MPD::Common::Item;
-use Test::More tests => 21;
+use Test::More tests => 22;
 
 my ($i, $output, @output, %params);
 
@@ -68,12 +68,15 @@ isa_ok( $i, 'Audio::MPD::Common::Item', 'directory inherits from item' );
 
 #
 # testing amc::item::playlist
-$output = "playlist: some_name\n";
+$output = 'playlist: some_name
+Last-Modified: 2006-12-13T19:53:50Z
+';
 @output = split /\n/, $output;
 %params = map { /^([^:]+):\s+(.*)$/ ? ($1=>$2) : () } @output;
 $i = Audio::MPD::Common::Item->new( %params );
 isa_ok( $i, 'Audio::MPD::Common::Item::Playlist', 'playlist creation' );
 is( $i->playlist, 'some_name',  'accessor: playlist' );
+is( $i->last_modified, '2006-12-13T19:53:50Z',  'accessor: last_modified' );
 isa_ok( $i, 'Audio::MPD::Common::Item', 'playlistinherits from item' );
 
 exit;
