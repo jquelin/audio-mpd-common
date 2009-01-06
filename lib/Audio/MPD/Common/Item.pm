@@ -23,9 +23,9 @@ use Audio::MPD::Common::Item::Song;
 sub new {
     my ($pkg, %params) = @_;
 
-    # transform keys in lowercase.
+    # transform keys in lowercase, remove dashes "-"
     my %lowcase;
-    @lowcase{ map { lc } keys %params } = values %params;
+    @lowcase{ map { s/-/_/; lc } keys %params } = values %params;
 
     return Audio::MPD::Common::Item::Song->new(\%lowcase)      if exists $params{file};
     return Audio::MPD::Common::Item::Directory->new(\%lowcase) if exists $params{directory};
