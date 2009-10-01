@@ -4,27 +4,24 @@ use warnings;
 package Audio::MPD::Common::Item::Directory;
 # ABSTRACT: a directory object
 
-use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
-__PACKAGE__->mk_accessors( qw[ directory ] );
+use Moose;
+
+use base qw{ Audio::MPD::Common::Item };
+
+# -- attributes
+
+=attr $status->directory()
+
+The path to the item's directory.
+
+=cut
+
+has directory => ( is=>'ro', isa=>'Str', required=>1 );
 
 1;
 __END__
-
-=head1 SYNOPSIS
-
-    print $item->directory . "\n";
-
 
 =head1 DESCRIPTION
 
 L<Audio::MPD::Common::Item::Directory> is more a placeholder for a
 hash ref with one pre-defined key, namely the directory name.
-
-
-=head1 PUBLIC METHODS
-
-This module only has a C<new()> constructor, which should only be called by
-L<Audio::MPD::Common::Item>'s constructor.
-
-The only other public method is an accessor: directory().
-
