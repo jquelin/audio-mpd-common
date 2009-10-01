@@ -9,9 +9,9 @@ use Moose;
 use base qw{ Audio::MPD::Common::Item };
 
 
-# -- attributes
+# -- public attributes
 
-=attr $item->directory()
+=attr $item->directory;
 
 The path to the item's directory.
 

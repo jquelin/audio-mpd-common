@@ -7,33 +7,33 @@ package Audio::MPD::Common::Stats;
 use Moose;
 
 
-# -- attributes
+# -- public attributes
 
-=attr $stats->artists()
+=attr $stats->artists;
 
 Number of artists in the music database.
 
-=attr $stats->albums()
+=attr $stats->albums;
 
 Number of albums in the music database.
 
-=attr $stats->songs()
+=attr $stats->songs;
 
 Number of songs in the music database.
 
-=attr $stats->uptime()
+=attr $stats->uptime;
 
 Daemon uptime (time since last startup) in seconds.
 
-=attr $stats->playtime()
+=attr $stats->playtime;
 
 Time length of music played.
 
-=attr $stats->db_playtime()
+=attr $stats->db_playtime;
 
 Sum of all song times in the music database.
 
-=attr $stats->db_update()
+=attr $stats->db_update;
 
 Last database update in UNIX time.
 

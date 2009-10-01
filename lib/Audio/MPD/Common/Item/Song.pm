@@ -13,7 +13,7 @@ use overload '""' => \&as_string;
 Readonly my $SEP => ' = ';
 
 
-# -- attributes
+# -- public attributes
 
 =attr $song->album;
 

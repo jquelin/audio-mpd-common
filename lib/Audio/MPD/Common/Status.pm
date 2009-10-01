@@ -8,6 +8,9 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use Audio::MPD::Common::Time;
 
+
+# -- private types
+
 subtype 'Int_0_100'
       => as 'Int'
       => where { $_ >= 0 && $_ <= 100 }
@@ -18,65 +21,65 @@ coerce 'Audio::MPD::Common::Time'
     => via { Audio::MPD::Common::Time->new($_) };
 
 
-# -- attributes
+# -- public attributes
 
-=attr $status->audio()
+=attr $status->audio;
 
 A string with the sample rate of the song currently playing, number of
 bits of the output and number of channels (2 for stereo) - separated
 by a colon.
 
-=attr $status->bitrate()
+=attr $status->bitrate;
 
 The instantaneous bitrate in kbps.
 
-=attr $status->error()
+=attr $status->error;
 
 May appear in special error cases, such as when disabling output.
 
-=attr $status->playlist()
+=attr $status->playlist;
 
 The playlist version number, that changes every time the playlist
 is updated.
 
-=attr $status->playlistlength()
+=attr $status->playlistlength;
 
 The number of songs in the playlist.
 
-=attr $status->random()
+=attr $status->random;
 
 Whether the playlist is read randomly or not.
 
-=attr $status->repeat()
+=attr $status->repeat;
 
 Whether the song is repeated or not.
 
-=attr $status->song()
+=attr $status->song;
 
 The offset of the song currently played in the playlist.
 
-=attr $status->songid()
+=attr $status->songid;
 
 The song id (MPD id) of the song currently played.
 
-=attr $status->state()
+=attr $status->state;
 
 The state of MPD server. Either C<play>, C<stop> or C<pause>.
 
-=attr $status->time()
+=attr $status->time;
 
 An L<Audio::MPD::Common::Time> object, representing the time elapsed /
 remainging and total. See the associated pod for more details.
 
-=attr $status->updating_db()
+=attr $status->updating_db;
 
 An integer, representing the current update job.
 
-=attr $status->volume()
+=attr $status->volume;
 
 The current MPD volume - an integer between 0 and 100.
 
-=attr $status->xfade()
+=attr $status->xfade;
 
 The crossfade in seconds.
 

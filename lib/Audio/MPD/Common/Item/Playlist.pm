@@ -9,13 +9,13 @@ use Moose;
 use base qw{ Audio::MPD::Common::Item };
 
 
-# -- attributes
+# -- public attributes
 
-=attr $item->last_modified()
+=attr $item->last_modified;
 
 Last modification date.
 
-=attr $item->playlist()
+=attr $item->playlist;
 
 Path to the playlist file.
 
