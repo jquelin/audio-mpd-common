@@ -35,13 +35,18 @@ isa_ok( $i, 'Audio::MPD::Common::Item', 'song inherits from item' );
 #
 # testing as_string from amc::item::song.
 is( $i->as_string, 'Frobnizer = 26 = Foo Bar = Blah!', 'as_string() with all tags' );
-$i->track(undef);
+delete $params{Track};
+$i = Audio::MPD::Common::Item->new( %params );
 is( $i->as_string, 'Foo Bar = Blah!', 'as_string() without track' );
-$i->track(26); $i->album(undef);
+delete $params{Album};
+$params{Track} = 26;
+$i = Audio::MPD::Common::Item->new( %params );
 is( $i->as_string, 'Foo Bar = Blah!', 'as_string() without album' );
-$i->artist(undef);
+delete $params{Artist};
+$i = Audio::MPD::Common::Item->new( %params );
 is( $i->as_string, 'Blah!',           'as_string() without artist' );
-$i->title(undef);
+delete $params{Title};
+$i = Audio::MPD::Common::Item->new( %params );
 is( $i->as_string, 'some/random/path/to/a/song.ogg', 'as_string() without title' );
 
 
