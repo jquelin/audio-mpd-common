@@ -1,7 +1,7 @@
-package Audio::MPD::Common::Status;
-
-use warnings;
 use strict;
+use warnings;
+
+package Audio::MPD::Common::Status;
 
 use Audio::MPD::Common::Time;
 

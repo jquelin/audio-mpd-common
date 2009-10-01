@@ -1,7 +1,7 @@
-package Audio::MPD::Common::Item::Song;
-
 use strict;
 use warnings;
+
+package Audio::MPD::Common::Item::Song;
 
 use overload '""' => \&as_string;
 use Readonly;

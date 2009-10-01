@@ -1,7 +1,7 @@
-package Audio::MPD::Common::Stats;
-
-use warnings;
 use strict;
+use warnings;
+
+package Audio::MPD::Common::Stats;
 
 use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors

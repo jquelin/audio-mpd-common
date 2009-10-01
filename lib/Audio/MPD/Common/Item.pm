@@ -1,7 +1,8 @@
-package Audio::MPD::Common::Item;
-
 use strict;
 use warnings;
+
+package Audio::MPD::Common::Item;
+
 use Audio::MPD::Common::Item::Directory;
 use Audio::MPD::Common::Item::Playlist;
 use Audio::MPD::Common::Item::Song;

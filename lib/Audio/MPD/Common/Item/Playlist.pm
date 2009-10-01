@@ -1,7 +1,7 @@
-package Audio::MPD::Common::Item::Playlist;
-
 use strict;
 use warnings;
+
+package Audio::MPD::Common::Item::Playlist;
 
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ last_modified playlist ] );

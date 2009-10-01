@@ -9,6 +9,9 @@ High-level changelog
 Low-level changelog
 ===================
 
+{{$NEXT}}
+ - migrated to dist::zilla (raaaaaar!)
+
 0.1.4 Tue Jan  6 16:40:08 CET 2009
  - missing tag last_modified in amci:playlist (new in mpd 0.14)
 
