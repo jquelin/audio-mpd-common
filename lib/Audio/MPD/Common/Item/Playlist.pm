@@ -4,27 +4,34 @@ use warnings;
 package Audio::MPD::Common::Item::Playlist;
 # ABSTRACT: a playlist object
 
-use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
-__PACKAGE__->mk_accessors( qw[ last_modified playlist ] );
+use Moose;
+
+use base qw{ Audio::MPD::Common::Item };
+
+
+# -- attributes
+
+=attr $item->last_modified()
+
+Last modification date.
+
+=attr $item->playlist()
+
+Path to the playlist file.
+
+=cut
+
+has last_modified => ( is=>'ro', isa=>'Str', required=>0 );
+has playlist      => ( is=>'ro', isa=>'Str', required=>1 );
 
 1;
 __END__
 
-=head1 SYNOPSIS
-
-    print $item->playlist . "\n";
-
-
 =head1 DESCRIPTION
 
-L<Audio::MPD::Common::Item::Playlist> is more a placeholder for a hash ref
-with one pre-defined key, namely the playlist name.
+L<Audio::MPD::Common::Item::Playlist> is more a placeholder with some
+attributes.
 
-
-=head1 PUBLIC METHODS
-
-This module only has a C<new()> constructor, which should only be called by
-L<Audio::MPD::Common::Item>'s constructor.
-
-The only other public method is an accessor: playlist().
+The constructor should only be called by L<Audio::MPD::Common::Item>'s
+constructor.
 
