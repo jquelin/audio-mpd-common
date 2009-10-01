@@ -21,9 +21,9 @@ __END__
 
 The MPD server maintains some general information. Those information can be
 queried with the mpd modules. Some of those information are served to you as
-an C<Audio::MPD::Common::Status> object.
+an L<Audio::MPD::Common::Status> object.
 
-Note that an C<Audio::MPD::Common::Stats> object does B<not> update itself
+Note that an L<Audio::MPD::Common::Stats> object does B<not> update itself
 regularly, and thus should be used immediately.
 
 
@@ -35,10 +35,10 @@ regularly, and thus should be used immediately.
 
 =item new( %kv )
 
-The C<new()> method is the constructor for the C<Audio::MPD::Common::Stats>
+The C<new()> method is the constructor for the L<Audio::MPD::Common::Stats>
 class.
 
-Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Stats>
+Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Stats>
 object directly - use the mpd modules instead.
 
 =back

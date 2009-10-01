@@ -33,12 +33,12 @@ __END__
 
 =head1 DESCRIPTION
 
-C<Audio::MPD::Common::Item> is a virtual class representing a generic
+L<Audio::MPD::Common::Item> is a virtual class representing a generic
 item of mpd's collection. It can be either a song, a directory or a playlist.
 
 Depending on the params given to C<new>, it will create and return an
-C<Audio::MPD::Common::Item::Song>, an C<Audio::MPD::Common::Item::Directory>
-or an C<Audio::MPD::Common::Playlist> object. Currently, the
+L<Audio::MPD::Common::Item::Song>, an L<Audio::MPD::Common::Item::Directory>
+or an L<Audio::MPD::Common::Playlist> object. Currently, the
 discrimination is done on the existence of the C<file> key of C<%params>.
 
 
@@ -50,8 +50,8 @@ Note that the only sub worth it in this class is the constructor:
 
 =item new( key => val [, key => val [, ...] ] )
 
-Create and return either an C<Audio::MPD::Common::Item::Song>, an
-C<Audio::MPD::Common::Item::Directory> or an C<Audio::MPD::Common::Playlist>
+Create and return either an L<Audio::MPD::Common::Item::Song>, an
+L<Audio::MPD::Common::Item::Directory> or an L<Audio::MPD::Common::Playlist>
 object, depending on the existence of a key C<file>, C<directory> or
 C<playlist> (respectively).
 

@@ -83,12 +83,12 @@ __END__
 
 =head1 DESCRIPTION
 
-C<Audio::MPD::Common::Status> returns some time information with the C<time()>
+L<Audio::MPD::Common::Status> returns some time information with the C<time()>
 accessor. This information relates to the elapsed time of the current song,
 as well as the remaining and total time. This information is encapsulated
-in an C<Audio::MPD::Common::Time> object.
+in an L<Audio::MPD::Common::Time> object.
 
-Note that an C<Audio::MPD::Common::Time> object does B<not> update itself
+Note that an L<Audio::MPD::Common::Time> object does B<not> update itself
 regularly, and thus should be used immediately.
 
 
@@ -100,10 +100,10 @@ regularly, and thus should be used immediately.
 
 =item new( $time )
 
-The C<new()> method is the constructor for the C<Audio::MPD::Common::Time>
+The C<new()> method is the constructor for the L<Audio::MPD::Common::Time>
 class.
 
-Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Time>
+Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Time>
 object directly - use the mpd modules instead.
 
 =back

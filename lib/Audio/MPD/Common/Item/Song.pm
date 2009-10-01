@@ -44,14 +44,14 @@ __END__
 
 =head1 DESCRIPTION
 
-C<Audio::MPD::Common::Item::Song> is more a placeholder for a
+L<Audio::MPD::Common::Item::Song> is more a placeholder for a
 hash ref with some pre-defined keys, namely some audio tags.
 
 
 =head1 PUBLIC METHODS
 
 This module has a C<new()> constructor, which should only be called by
-C<Audio::MPD::Common::Item>'s constructor.
+L<Audio::MPD::Common::Item>'s constructor.
 
 The only other public methods are the accessors - see below.
 

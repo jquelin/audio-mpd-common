@@ -41,9 +41,9 @@ __END__
 
 The MPD server maintains some information on its current state. Those
 information can be queried with mpd modules. Some of those information
-are served to you as an C<Audio::MPD::Common::Status> object.
+are served to you as an L<Audio::MPD::Common::Status> object.
 
-Note that an C<Audio::MPD::Common::Status> object does B<not> update
+Note that an L<Audio::MPD::Common::Status> object does B<not> update
 itself regularly, and thus should be used immediately.
 
 
@@ -55,10 +55,10 @@ itself regularly, and thus should be used immediately.
 
 =item new( \%kv )
 
-The C<new()> method is the constructor for the C<Audio::MPD::Common::Status>
+The C<new()> method is the constructor for the L<Audio::MPD::Common::Status>
 class.
 
-Note: one should B<never> ever instantiate an C<Audio::MPD::Common::Status>
+Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Status>
 object directly - use the mpd modules instead.
 
 =back
@@ -123,7 +123,7 @@ The state of MPD server. Either C<play>, C<stop> or C<pause>.
 
 =item $status->time()
 
-An C<Audio::MPD::Common::Time> object, representing the time elapsed /
+An L<Audio::MPD::Common::Time> object, representing the time elapsed /
 remainging and total. See the associated pod for more details.
 
 
