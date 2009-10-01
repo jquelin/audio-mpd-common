@@ -8,9 +8,10 @@ use Moose;
 
 use base qw{ Audio::MPD::Common::Item };
 
+
 # -- attributes
 
-=attr $status->directory()
+=attr $item->directory()
 
 The path to the item's directory.
 
@@ -23,5 +24,8 @@ __END__
 
 =head1 DESCRIPTION
 
-L<Audio::MPD::Common::Item::Directory> is more a placeholder for a
-hash ref with one pre-defined key, namely the directory name.
+L<Audio::MPD::Common::Item::Directory> is more a placeholder with some
+attributes.
+
+The constructor should only be called by L<Audio::MPD::Common::Item>'s
+constructor.
