@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Item::Song;
+# ABSTRACT: a song object with some audio tags
 
 use overload '""' => \&as_string;
 use Readonly;
@@ -39,14 +40,7 @@ sub as_string {
 }
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Item::Song - a song object with some audio tags
-
 
 =head1 DESCRIPTION
 

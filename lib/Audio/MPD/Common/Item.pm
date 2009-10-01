@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Item;
+# ABSTRACT: a generic collection item
 
 use Audio::MPD::Common::Item::Directory;
 use Audio::MPD::Common::Item::Playlist;
@@ -23,14 +24,7 @@ sub new {
 }
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Item - a generic collection item
-
 
 =head1 SYNOPSIS
 

@@ -2,20 +2,13 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Item::Playlist;
+# ABSTRACT: a playlist object
 
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ last_modified playlist ] );
 
-
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Item::Playlist - a playlist object
-
 
 =head1 SYNOPSIS
 

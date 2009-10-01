@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Stats;
+# ABSTRACT: class representing MPD stats
 
 use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors
@@ -9,14 +10,7 @@ __PACKAGE__->mk_accessors
 
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Stats - class representing MPD stats
-
 
 =head1 SYNOPSIS
 

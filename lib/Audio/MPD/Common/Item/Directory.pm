@@ -2,19 +2,13 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Item::Directory;
+# ABSTRACT: a directory object
 
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ directory ] );
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Item::Directory - a directory object
-
 
 =head1 SYNOPSIS
 

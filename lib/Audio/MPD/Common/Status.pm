@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Status;
+# ABSTRACT: class representing MPD status
 
 use Audio::MPD::Common::Time;
 
@@ -29,14 +30,7 @@ sub new {
 }
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common::Status - class representing MPD status
-
 
 =head1 SYNOPSIS
 

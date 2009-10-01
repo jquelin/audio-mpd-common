@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common::Time;
+# ABSTRACT: class representing time of current song
 
 use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors
@@ -72,13 +73,7 @@ sub new {
 
 
 1;
-
 __END__
-
-=head1 NAME
-
-Audio::MPD::Common::Time - class representing time of current song
-
 
 =head1 SYNOPSIS
 

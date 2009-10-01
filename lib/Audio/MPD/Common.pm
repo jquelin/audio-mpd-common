@@ -2,16 +2,10 @@ use strict;
 use warnings;
 
 package Audio::MPD::Common;
+# ABSTRACT: common helper classes for mpd
 
 1;
-
 __END__
-
-
-=head1 NAME
-
-Audio::MPD::Common - a bunch of common helper classes for mpd
-
 
 =head1 DESCRIPTION
 
