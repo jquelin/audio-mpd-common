@@ -4,12 +4,30 @@ use warnings;
 package Audio::MPD::Common::Status;
 # ABSTRACT: class representing MPD status
 
+use Moose;
+use Moose::Util::TypeConstraints;
 use Audio::MPD::Common::Time;
 
-use base qw[ Class::Accessor::Fast ];
-__PACKAGE__->mk_accessors
-    ( qw[ audio bitrate error playlist playlistlength random
-          repeat song songid state time volume updating_db xfade ] );
+subtype 'Int_0_100'
+      => as 'Int'
+      => where { $_ >= 0 && $_ <= 100 }
+      => message { "$_ is not between 0 and 100" };
+enum 'State' => qw{ play stop pause };
+
+has audio          => ( is=>'ro', required=>1, isa=>'Str' );
+has bitrate        => ( is=>'ro', required=>1, isa=>'Int' );
+has error          => ( is=>'ro', required=>0, isa=>'Str' );
+has playlist       => ( is=>'ro', required=>1, isa=>'Int' );
+has playlistlength => ( is=>'ro', required=>1, isa=>'Int' );
+has random         => ( is=>'ro', required=>1, isa=>'Bool' );
+has repeat         => ( is=>'ro', required=>1, isa=>'Bool' );
+has songid         => ( is=>'ro', required=>1, isa=>'Int' );
+has song           => ( is=>'ro', required=>1, isa=>'Int' );
+has state          => ( is=>'ro', required=>1, isa=>'State' );
+has time           => ( is=>'ro', required=>1, isa=>'Audio::MPD::Common::Time' );
+has updating_db    => ( is=>'ro', required=>1, isa=>'Int' );
+has volume         => ( is=>'ro', required=>1, isa=>'Int_0_100' );
+has xfade          => ( is=>'ro', required=>1, isa=>'Int' );
 
 
 #--
