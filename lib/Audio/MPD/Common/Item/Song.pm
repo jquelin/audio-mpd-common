@@ -90,28 +90,3 @@ possibility always exist of course, since it's a path.
 
 =back
 
-
-=head1 SEE ALSO
-
-=over 4
-
-=item L<Audio::MPD>
-
-=item L<POE::Component::Client::MPD>
-
-=back
-
-
-=head1 AUTHOR
-
-Jerome Quelin, C<< <jquelin at cpan.org> >>
-
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright (c) 2007 Jerome Quelin, all rights reserved.
-
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut
