@@ -4,27 +4,96 @@ use warnings;
 package Audio::MPD::Common::Item::Song;
 # ABSTRACT: a song object with some audio tags
 
-use overload '""' => \&as_string;
+use Moose;
 use Readonly;
 
-use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
-__PACKAGE__->mk_accessors( qw[ album artist date file genre id pos title track time ] );
-
+use base qw{ Audio::MPD::Common::Item };
+use overload '""' => \&as_string;
 
 Readonly my $SEP => ' = ';
 
 
-#
-# my $str = $song->as_string;
-#
-# Return a string representing $song. This string will be;
-#  - either "album = track = artist = title"
-#  - or     "artist = title"
-#  - or     "title"
-#  - or     "file"
-# (in this order), depending on the existing tags of the song. The last
-# possibility always exist of course, since it's a path.
-#
+# -- attributes
+
+=attr $song->album;
+
+Album of the song.
+
+=attr $song->artist;
+
+Artist of the song.
+
+=attr $song->date;
+
+Last modification date of the song.
+
+=attr $song->file;
+
+Path to the song. Only attribute which will always be defined.
+
+=attr $song->genre;
+
+Genre of the song.
+
+=attr $song->id;
+
+Id of the song in MPD's database.
+
+=attr $song->pos;
+
+Position of the song in the playlist.
+
+=attr $song->title;
+
+Title of the song.
+
+=attr $song->track;
+
+Track number of the song.
+
+=attr $song->time;
+
+Length of the song in seconds.
+
+=cut
+
+has album  => ( is=>'ro', isa=>'Str' );
+has artist => ( is=>'ro', isa=>'Str' );
+has date   => ( is=>'ro', isa=>'Int' );
+has file   => ( is=>'ro', isa=>'Str', required=>1 );
+has genre  => ( is=>'ro', isa=>'Str' );
+has id     => ( is=>'ro', isa=>'Int' );
+has pos    => ( is=>'ro', isa=>'Int' );
+has title  => ( is=>'ro', isa=>'Str' );
+has track  => ( is=>'ro', isa=>'Int' );
+has time   => ( is=>'ro', isa=>'Int' );
+
+
+# -- public methods
+
+=method my $str = $song->as_string;
+
+Return a string representing $song. This string will be:
+
+=over 4
+
+=item either "album = track = artist = title"
+
+=item or "artist = title"
+
+=item or "title"
+
+=item or "file"
+
+=back
+
+(in this order), depending on the existing tags of the song. The last
+possibility always exist of course, since it's a path.
+
+This method is also used to automatically stringify the C<$song>.
+
+=cut
+
 sub as_string {
     my ($self) = @_;
 
@@ -44,49 +113,9 @@ __END__
 
 =head1 DESCRIPTION
 
-L<Audio::MPD::Common::Item::Song> is more a placeholder for a
-hash ref with some pre-defined keys, namely some audio tags.
+L<Audio::MPD::Common::Item::Song> is more a placeholder with some
+attributes. Those attributes are taken from the song tags, so some of
+them can be empty depending on the file.
 
-
-=head1 PUBLIC METHODS
-
-This module has a C<new()> constructor, which should only be called by
-L<Audio::MPD::Common::Item>'s constructor.
-
-The only other public methods are the accessors - see below.
-
-
-=head2 Accessors
-
-The following methods are the accessors to their respective named
-fields: C<album()>, C<artist()>, C<dat()>, C<file()>, C<genre()>, C<id>,
-C<pos>, C<title()>, C<track()>, C<time()>. You can call them either with
-no arg to get the value, or with an arg to replace the current value.
-
-
-=head2 Methods
-
-
-=over 4
-
-=item $song->as_string()
-
-Return a string representing $song. This string will be:
-
-=over 4
-
-=item either "album = track = artist = title"
-
-=item or "artist = title"
-
-=item or "title"
-
-=item or "file"
-
-=back
-
-(in this order), depending on the existing tags of the song. The last
-possibility always exist of course, since it's a path.
-
-=back
-
+The constructor should only be called by L<Audio::MPD::Common::Item>'s
+constructor.
