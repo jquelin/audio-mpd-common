@@ -1,13 +1,3 @@
-#!perl
-#
-# This file is part of Audio::MPD::Common
-# Copyright (c) 2007 Jerome Quelin, all rights reserved.
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the same terms as Perl itself.
-#
-#
-
 use strict;
 use warnings;
 
@@ -48,5 +38,3 @@ is( $s->bitrate,        127,                             'accessor: bitrate' );
 is( $s->audio,          '44100:16:2',                    'accessor: audio' );
 is( $s->error,          'problems opening audio device', 'accessor: error' );
 is( $s->updating_db,    1,                               'accessor: updating_db' );
-
-exit;

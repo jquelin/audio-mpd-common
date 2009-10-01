@@ -1,13 +1,3 @@
-#!perl
-#
-# This file is part of Audio::MPD::Common
-# Copyright (c) 2007 Jerome Quelin, all rights reserved.
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the same terms as Perl itself.
-#
-#
-
 use strict;
 use warnings;
 
@@ -78,5 +68,3 @@ isa_ok( $i, 'Audio::MPD::Common::Item::Playlist', 'playlist creation' );
 is( $i->playlist, 'some_name',  'accessor: playlist' );
 is( $i->last_modified, '2006-12-13T19:53:50Z',  'accessor: last_modified' );
 isa_ok( $i, 'Audio::MPD::Common::Item', 'playlistinherits from item' );
-
-exit;

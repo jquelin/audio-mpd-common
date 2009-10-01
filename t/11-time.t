@@ -1,13 +1,3 @@
-#!perl
-#
-# This file is part of Audio::MPD::Common
-# Copyright (c) 2007 Jerome Quelin, all rights reserved.
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the same terms as Perl itself.
-#
-#
-
 use strict;
 use warnings;
 
@@ -45,5 +35,3 @@ is( $time->seconds_total, 225, 'seconds_total() gives time total in secs' );
 # testing null time
 $time = Audio::MPD::Common::Time->new( '126:0' );
 is( $time->percent, '0.0', 'percent() defaults to 0' );
-
-exit;
