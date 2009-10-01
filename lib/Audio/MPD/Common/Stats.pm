@@ -7,7 +7,6 @@ use base qw[ Class::Accessor::Fast ];
 __PACKAGE__->mk_accessors
     ( qw[ artists albums songs uptime playtime db_playtime db_update ] );
 
-#our ($VERSION) = '$Rev$' =~ /(\d+)/;
 
 1;
 

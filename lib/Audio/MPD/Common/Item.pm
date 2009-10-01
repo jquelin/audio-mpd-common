@@ -7,8 +7,6 @@ use Audio::MPD::Common::Item::Directory;
 use Audio::MPD::Common::Item::Playlist;
 use Audio::MPD::Common::Item::Song;
 
-#our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
-
 #
 # constructor.
 #

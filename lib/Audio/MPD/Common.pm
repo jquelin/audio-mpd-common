@@ -3,8 +3,6 @@ use warnings;
 
 package Audio::MPD::Common;
 
-our $VERSION = '0.1.4';
-
 1;
 
 __END__

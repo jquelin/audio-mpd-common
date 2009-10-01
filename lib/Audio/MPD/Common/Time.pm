@@ -11,8 +11,6 @@ __PACKAGE__->mk_accessors
           left_secs  left_mins  seconds_left
         ] );
 
-#our ($VERSION) = '$Rev$' =~ /(\d+)/;
-
 
 #--
 # Constructor

@@ -9,7 +9,6 @@ use Readonly;
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ album artist date file genre id pos title track time ] );
 
-#our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
 
 Readonly my $SEP => ' = ';
 

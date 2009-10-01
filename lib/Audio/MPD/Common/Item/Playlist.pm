@@ -6,7 +6,6 @@ package Audio::MPD::Common::Item::Playlist;
 use base qw[ Class::Accessor::Fast Audio::MPD::Common::Item ];
 __PACKAGE__->mk_accessors( qw[ last_modified playlist ] );
 
-#our ($VERSION) = '$Rev: 5645 $' =~ /(\d+)/;
 
 1;
 
