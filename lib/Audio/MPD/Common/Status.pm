@@ -13,6 +13,9 @@ subtype 'Int_0_100'
       => where { $_ >= 0 && $_ <= 100 }
       => message { "$_ is not between 0 and 100" };
 enum 'State' => qw{ play stop pause };
+coerce 'Audio::MPD::Common::Time'
+    => from 'Str'
+    => via { Audio::MPD::Common::Time->new($_) };
 
 has audio          => ( is=>'ro', required=>1, isa=>'Str' );
 has bitrate        => ( is=>'ro', required=>1, isa=>'Int' );
@@ -24,28 +27,10 @@ has repeat         => ( is=>'ro', required=>1, isa=>'Bool' );
 has songid         => ( is=>'ro', required=>1, isa=>'Int' );
 has song           => ( is=>'ro', required=>1, isa=>'Int' );
 has state          => ( is=>'ro', required=>1, isa=>'State' );
-has time           => ( is=>'ro', required=>1, isa=>'Audio::MPD::Common::Time' );
+has time           => ( is=>'ro', required=>1, isa=>'Audio::MPD::Common::Time', coerce=>1 );
 has updating_db    => ( is=>'ro', required=>1, isa=>'Int' );
 has volume         => ( is=>'ro', required=>1, isa=>'Int_0_100' );
 has xfade          => ( is=>'ro', required=>1, isa=>'Int' );
-
-
-#--
-# Constructor
-
-#
-# my $status = Audio::MPD::Common::Status->new( \%kv )
-#
-# The constructor for the class Audio::MPD::Common::Status. %kv is
-# a cooked output of what MPD server returns to the status command.
-#
-sub new {
-    my ($class, $kv) = @_;
-    my %kv = %$kv;
-    $kv{time} = Audio::MPD::Common::Time->new( delete $kv{time} );
-    bless \%kv, $class;
-    return \%kv;
-}
 
 1;
 __END__
@@ -73,8 +58,9 @@ itself regularly, and thus should be used immediately.
 
 =item new( \%kv )
 
-The C<new()> method is the constructor for the L<Audio::MPD::Common::Status>
-class.
+The C<new()> method is the constructor for the
+L<Audio::MPD::Common::Status> class. C<%kv> is a cooked output of what
+MPD server returns to the status command.
 
 Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Status>
 object directly - use the mpd modules instead.
