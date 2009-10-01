@@ -17,6 +17,7 @@ coerce 'Audio::MPD::Common::Time'
     => from 'Str'
     => via { Audio::MPD::Common::Time->new($_) };
 
+
 # -- attributes
 
 =attr $status->audio()
@@ -97,19 +98,6 @@ has volume         => ( is=>'ro', required=>1, isa=>'Int_0_100' );
 has xfade          => ( is=>'ro', required=>1, isa=>'Int' );
 
 
-# -- public methods
-
-=method my $status = Audio::MPD::Common::Status->new( \%kv );
-
-The C<new()> method is the constructor for the
-L<Audio::MPD::Common::Status> class. C<%kv> is a cooked output of what
-MPD server returns to the status command.
-
-Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Status>
-object directly - use the mpd modules instead.
-
-=cut
-
 1;
 __END__
 
@@ -119,5 +107,8 @@ The MPD server maintains some information on its current state. Those
 information can be queried with mpd modules. Some of those information
 are served to you as an L<Audio::MPD::Common::Status> object.
 
-Note that an L<Audio::MPD::Common::Status> object does B<not> update
-itself regularly, and thus should be used immediately.
+An L<Audio::MPD::Common::Status> object does B<not> update itself
+regularly, and thus should be used immediately.
+
+Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Status>
+object directly - use the mpd modules instead.
