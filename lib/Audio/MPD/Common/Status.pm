@@ -18,7 +18,7 @@ subtype 'Int_0_100'
 enum 'State' => qw{ play stop pause };
 coerce 'Audio::MPD::Common::Time'
     => from 'Str'
-    => via { Audio::MPD::Common::Time->new($_) };
+    => via { Audio::MPD::Common::Time->new(time=>$_) };
 
 
 # -- public attributes
