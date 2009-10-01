@@ -8,9 +8,18 @@ use Audio::MPD::Common::Item::Directory;
 use Audio::MPD::Common::Item::Playlist;
 use Audio::MPD::Common::Item::Song;
 
-#
-# constructor.
-#
+
+# -- constructor
+
+=method my $item = Audio::MPD::Common::Item->new( %params );
+
+Create and return either an L<Audio::MPD::Common::Item::Song>, an
+L<Audio::MPD::Common::Item::Directory> or an L<Audio::MPD::Common::Playlist>
+object, depending on the existence of a key C<file>, C<directory> or
+C<playlist> (respectively).
+
+=cut
+
 sub new {
     my ($pkg, %params) = @_;
 
@@ -40,20 +49,3 @@ Depending on the params given to C<new>, it will create and return an
 L<Audio::MPD::Common::Item::Song>, an L<Audio::MPD::Common::Item::Directory>
 or an L<Audio::MPD::Common::Playlist> object. Currently, the
 discrimination is done on the existence of the C<file> key of C<%params>.
-
-
-=head1 PUBLIC METHODS
-
-Note that the only sub worth it in this class is the constructor:
-
-=over 4
-
-=item new( key => val [, key => val [, ...] ] )
-
-Create and return either an L<Audio::MPD::Common::Item::Song>, an
-L<Audio::MPD::Common::Item::Directory> or an L<Audio::MPD::Common::Playlist>
-object, depending on the existence of a key C<file>, C<directory> or
-C<playlist> (respectively).
-
-=back
-
