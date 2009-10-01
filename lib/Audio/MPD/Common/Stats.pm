@@ -4,10 +4,15 @@ use warnings;
 package Audio::MPD::Common::Stats;
 # ABSTRACT: class representing MPD stats
 
-use base qw[ Class::Accessor::Fast ];
-__PACKAGE__->mk_accessors
-    ( qw[ artists albums songs uptime playtime db_playtime db_update ] );
+use Moose;
 
+has artists     => ( is=>'ro', isa=>'Int', required=>1 );
+has albums      => ( is=>'ro', isa=>'Int', required=>1 );
+has songs       => ( is=>'ro', isa=>'Int', required=>1 );
+has uptime      => ( is=>'ro', isa=>'Int', required=>1 );
+has playtime    => ( is=>'ro', isa=>'Int', required=>1 );
+has db_playtime => ( is=>'ro', isa=>'Int', required=>1 );
+has db_update   => ( is=>'ro', isa=>'Int', required=>1 );
 
 1;
 __END__
