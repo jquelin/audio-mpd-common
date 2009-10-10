@@ -85,20 +85,20 @@ The crossfade in seconds.
 
 =cut
 
-has audio          => ( is=>'ro', required=>1, isa=>'Str' );
-has bitrate        => ( is=>'ro', required=>1, isa=>'Int' );
-has error          => ( is=>'ro', required=>0, isa=>'Str' );
-has playlist       => ( is=>'ro', required=>1, isa=>'Int' );
-has playlistlength => ( is=>'ro', required=>1, isa=>'Int' );
-has random         => ( is=>'ro', required=>1, isa=>'Bool' );
-has repeat         => ( is=>'ro', required=>1, isa=>'Bool' );
-has songid         => ( is=>'ro', required=>1, isa=>'Int' );
-has song           => ( is=>'ro', required=>1, isa=>'Int' );
-has state          => ( is=>'ro', required=>1, isa=>'State' );
-has time           => ( is=>'ro', required=>1, isa=>'Audio::MPD::Common::Time', coerce=>1 );
-has updating_db    => ( is=>'ro', required=>1, isa=>'Int' );
-has volume         => ( is=>'ro', required=>1, isa=>'Int_0_100' );
-has xfade          => ( is=>'ro', required=>1, isa=>'Int' );
+has audio          => ( is=>'ro', isa=>'Str' );
+has bitrate        => ( is=>'ro', isa=>'Int' );
+has error          => ( is=>'ro', isa=>'Str' );
+has playlist       => ( is=>'ro', isa=>'Int' );
+has playlistlength => ( is=>'ro', isa=>'Int' );
+has random         => ( is=>'ro', isa=>'Bool' );
+has repeat         => ( is=>'ro', isa=>'Bool' );
+has songid         => ( is=>'ro', isa=>'Int' );
+has song           => ( is=>'ro', isa=>'Int' );
+has state          => ( is=>'ro', isa=>'State' );
+has time           => ( is=>'ro', isa=>'Audio::MPD::Common::Time', coerce=>1 );
+has updating_db    => ( is=>'ro', isa=>'Int' );
+has volume         => ( is=>'ro', isa=>'Int_0_100' );
+has xfade          => ( is=>'ro', isa=>'Int' );
 
 
 1;
