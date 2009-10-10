@@ -3,6 +3,7 @@ Revision history for Audio-MPD-Common
 {{$NEXT}}
  - migrated to moose
  - warning: accessors are now read-only!
+ - new song accessor: name (bug reported by thorsten schwinn)
  - migrated to dist::zilla (raaaaaar!)
 
 **

@@ -39,6 +39,10 @@ Genre of the song.
 
 Id of the song in MPD's database.
 
+=attr $song->name;
+
+Name of the song (for http streams).
+
 =attr $song->pos;
 
 Position of the song in the playlist.
@@ -63,6 +67,7 @@ has date   => ( is=>'ro', isa=>'Int' );
 has file   => ( is=>'ro', isa=>'Str', required=>1 );
 has genre  => ( is=>'ro', isa=>'Str' );
 has id     => ( is=>'ro', isa=>'Int' );
+has name   => ( is=>'ro', isa=>'Str' );
 has pos    => ( is=>'ro', isa=>'Int' );
 has title  => ( is=>'ro', isa=>'Str' );
 has track  => ( is=>'ro', isa=>'Int' );

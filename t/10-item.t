@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Audio::MPD::Common::Item;
-use Test::More tests => 22;
+use Test::More tests => 23;
 
 my ($i, $output, @output, %params);
 
@@ -10,6 +10,7 @@ my ($i, $output, @output, %params);
 # testing amc::item::song
 $output = 'file: some/random/path/to/a/song.ogg
 Time: 234
+Name: friskyRadio | feelin frisky?
 Artist: Foo Bar
 Album: Frobnizer
 Track: 26
@@ -28,6 +29,7 @@ is( $i->album,  'Frobnizer',                       'accessor: album' );
 is( $i->track,  26,                                'accessor: track' );
 is( $i->title,  'Blah!',                           'accessor: title' );
 is( $i->pos,    10,                                'accessor: pos' );
+is( $i->name,   'friskyRadio | feelin frisky?',    'accessor: name' );
 is( $i->id,     14,                                'accessor: id' );
 isa_ok( $i, 'Audio::MPD::Common::Item', 'song inherits from item' );
 
