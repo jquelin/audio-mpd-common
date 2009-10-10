@@ -1,6 +1,8 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+
+1.092830 Sat Oct 10 18:52:59 2009
  - migrated to moose
  - warning: accessors are now read-only!
  - new song accessor: name (bug reported by thorsten schwinn)
