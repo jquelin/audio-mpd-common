@@ -2,6 +2,9 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.092840 Sun Oct 11 09:31:23 2009
+ - amci:* accessors should not be readonly (assigned one by one by pococm:conn)
+
 1.092830 Sat Oct 10 18:52:59 2009
  - migrated to moose
  - warning: accessors are now read-only!
