@@ -61,17 +61,17 @@ Length of the song in seconds.
 
 =cut
 
-has album  => ( is=>'ro', isa=>'Str' );
-has artist => ( is=>'ro', isa=>'Str' );
-has date   => ( is=>'ro', isa=>'Int' );
-has file   => ( is=>'ro', isa=>'Str', required=>1 );
-has genre  => ( is=>'ro', isa=>'Str' );
-has id     => ( is=>'ro', isa=>'Int' );
-has name   => ( is=>'ro', isa=>'Str' );
-has pos    => ( is=>'ro', isa=>'Int' );
-has title  => ( is=>'ro', isa=>'Str' );
-has track  => ( is=>'ro', isa=>'Int' );
-has time   => ( is=>'ro', isa=>'Int' );
+has album  => ( is=>'rw', isa=>'Str' );
+has artist => ( is=>'rw', isa=>'Str' );
+has date   => ( is=>'rw', isa=>'Int' );
+has file   => ( is=>'rw', isa=>'Str', required=>1 );
+has genre  => ( is=>'rw', isa=>'Str' );
+has id     => ( is=>'rw', isa=>'Int' );
+has name   => ( is=>'rw', isa=>'Str' );
+has pos    => ( is=>'rw', isa=>'Int' );
+has title  => ( is=>'rw', isa=>'Str' );
+has track  => ( is=>'rw', isa=>'Int' );
+has time   => ( is=>'rw', isa=>'Int' );
 
 
 # -- public methods

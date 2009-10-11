@@ -17,7 +17,7 @@ The path to the item's directory.
 
 =cut
 
-has directory => ( is=>'ro', isa=>'Str', required=>1 );
+has directory => ( is=>'rw', isa=>'Str', required=>1 );
 
 1;
 __END__

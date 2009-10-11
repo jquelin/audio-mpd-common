@@ -21,8 +21,8 @@ Path to the playlist file.
 
 =cut
 
-has last_modified => ( is=>'ro', isa=>'Str', required=>0 );
-has playlist      => ( is=>'ro', isa=>'Str', required=>1 );
+has last_modified => ( is=>'rw', isa=>'Str', required=>0 );
+has playlist      => ( is=>'rw', isa=>'Str', required=>1 );
 
 1;
 __END__
