@@ -4,7 +4,7 @@ use warnings;
 package Audio::MPD::Common::Time;
 # ABSTRACT: class representing time of current song
 
-use Moose;
+use Moose 0.92; # need hash trait
 
 
 # -- attributes
