@@ -2,6 +2,10 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.092860 Tue Oct 13 17:33:42 2009
+ - track attribute in amci:song can be a string
+ - bumping requirement of moose to 0.92 to get hash traits
+
 1.092840 Sun Oct 11 09:31:23 2009
  - amci:* accessors should not be readonly (assigned one by one by pococm:conn)
 
