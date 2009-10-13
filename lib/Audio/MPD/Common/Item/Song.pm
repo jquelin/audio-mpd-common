@@ -70,7 +70,7 @@ has id     => ( is=>'rw', isa=>'Int' );
 has name   => ( is=>'rw', isa=>'Str' );
 has pos    => ( is=>'rw', isa=>'Int' );
 has title  => ( is=>'rw', isa=>'Str' );
-has track  => ( is=>'rw', isa=>'Int' );
+has track  => ( is=>'rw', isa=>'Str' );
 has time   => ( is=>'rw', isa=>'Int' );
 
 
