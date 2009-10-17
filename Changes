@@ -2,6 +2,9 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.092900 Sat Oct 17 19:28:11 2009
+ - new amci:song accessor: disc
+
 1.092860 Tue Oct 13 17:33:42 2009
  - track attribute in amci:song can be a string
  - bumping requirement of moose to 0.92 to get hash traits
