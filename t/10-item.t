@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Audio::MPD::Common::Item;
-use Test::More tests => 23;
+use Test::More tests => 24;
 
 my ($i, $output, @output, %params);
 
@@ -17,6 +17,7 @@ Artist: Foo Bar
 Album: Frobnizer
 Track: 26
 Title: Blah!
+Disc: 1/2
 Pos: 10
 Id: 14
 ';
@@ -28,6 +29,7 @@ is( $i->file,   'some/random/path/to/a/song.ogg',  'accessor: file' );
 is( $i->time,   234,                               'accessor: time' );
 is( $i->artist, 'Foo Bar',                         'accessor: artist' );
 is( $i->album,  'Frobnizer',                       'accessor: album' );
+is( $i->disc,   '1/2',                             'accessor: disc' );
 is( $i->track,  26,                                'accessor: track' );
 is( $i->title,  'Blah!',                           'accessor: title' );
 is( $i->pos,    10,                                'accessor: pos' );

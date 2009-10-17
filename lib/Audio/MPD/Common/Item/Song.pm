@@ -27,6 +27,10 @@ Artist of the song.
 
 Last modification date of the song.
 
+=attr $song->disc;
+
+Disc number of the album. This is a string to allow tags such as C<1/2>.
+
 =attr $song->file;
 
 Path to the song. Only attribute which will always be defined.
@@ -64,6 +68,7 @@ Length of the song in seconds.
 has album  => ( is=>'rw', isa=>'Str' );
 has artist => ( is=>'rw', isa=>'Str' );
 has date   => ( is=>'rw', isa=>'Int' );
+has disc   => ( is=>'rw', isa=>'Str' );
 has file   => ( is=>'rw', isa=>'Str', required=>1 );
 has genre  => ( is=>'rw', isa=>'Str' );
 has id     => ( is=>'rw', isa=>'Int' );
