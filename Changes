@@ -2,6 +2,9 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.093120 Sun Nov  8 15:15:58 2009
+ - date should be a string, not an int
+
 1.092910 Sun Oct 18 11:55:22 2009
  - requiring perl 5.008
 
