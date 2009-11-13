@@ -12,10 +12,6 @@ use Audio::MPD::Common::Time;
 
 # -- private types
 
-subtype 'Int_0_100'
-      => as 'Int'
-      => where { $_ >= 0 && $_ <= 100 }
-      => message { "$_ is not between 0 and 100" };
 enum 'State' => qw{ play stop pause };
 coerce 'Audio::MPD::Common::Time'
     => from 'Str'
@@ -98,7 +94,7 @@ has song           => ( is=>'ro', isa=>'Int' );
 has state          => ( is=>'ro', isa=>'State' );
 has time           => ( is=>'ro', isa=>'Audio::MPD::Common::Time', coerce=>1 );
 has updating_db    => ( is=>'ro', isa=>'Int' );
-has volume         => ( is=>'ro', isa=>'Int_0_100' );
+has volume         => ( is=>'ro', isa=>'Int' );
 has xfade          => ( is=>'ro', isa=>'Int' );
 
 
