@@ -2,6 +2,9 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.093170 Fri Nov 13 17:38:35 2009
+ - volume can be negative (in some error cases)
+
 1.093120 Sun Nov  8 15:15:58 2009
  - date should be a string, not an int
 
