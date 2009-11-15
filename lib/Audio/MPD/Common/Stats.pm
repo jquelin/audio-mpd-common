@@ -6,6 +6,8 @@ package Audio::MPD::Common::Stats;
 # ABSTRACT: class representing MPD stats
 
 use Moose;
+use MooseX::Has::Sugar;
+use MooseX::Types::Moose qw{ Int };
 
 
 # -- public attributes
@@ -40,13 +42,13 @@ Last database update in UNIX time.
 
 =cut
 
-has artists     => ( is=>'ro', isa=>'Int', required=>1 );
-has albums      => ( is=>'ro', isa=>'Int', required=>1 );
-has songs       => ( is=>'ro', isa=>'Int', required=>1 );
-has uptime      => ( is=>'ro', isa=>'Int', required=>1 );
-has playtime    => ( is=>'ro', isa=>'Int', required=>1 );
-has db_playtime => ( is=>'ro', isa=>'Int', required=>1 );
-has db_update   => ( is=>'ro', isa=>'Int', required=>1 );
+has artists     => ( ro, isa=>Int, required );
+has albums      => ( ro, isa=>Int, required );
+has songs       => ( ro, isa=>Int, required );
+has uptime      => ( ro, isa=>Int, required );
+has playtime    => ( ro, isa=>Int, required );
+has db_playtime => ( ro, isa=>Int, required );
+has db_update   => ( ro, isa=>Int, required );
 
 
 1;
