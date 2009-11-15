@@ -2,6 +2,10 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.093190 Sun Nov 15 12:14:23 2009
+ - isolating types in amc:types
+ - sweetening code with moosex::has::sugar
+
 1.093170 Fri Nov 13 17:38:35 2009
  - volume can be negative (in some error cases)
 
