@@ -6,6 +6,8 @@ package Audio::MPD::Common::Item::Playlist;
 # ABSTRACT: a playlist object
 
 use Moose;
+use MooseX::Has::Sugar;
+use MooseX::Types::Moose qw{ Str };
 
 use base qw{ Audio::MPD::Common::Item };
 
@@ -22,8 +24,8 @@ Path to the playlist file.
 
 =cut
 
-has last_modified => ( is=>'rw', isa=>'Str', required=>0 );
-has playlist      => ( is=>'rw', isa=>'Str', required=>1 );
+has last_modified => ( rw, isa=>Str );
+has playlist      => ( rw, isa=>Str, required );
 
 1;
 __END__
