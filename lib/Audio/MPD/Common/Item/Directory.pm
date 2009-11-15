@@ -6,6 +6,8 @@ package Audio::MPD::Common::Item::Directory;
 # ABSTRACT: a directory object
 
 use Moose;
+use MooseX::Has::Sugar;
+use MooseX::Types::Moose qw{ Str };
 
 use base qw{ Audio::MPD::Common::Item };
 
@@ -18,7 +20,7 @@ The path to the item's directory.
 
 =cut
 
-has directory => ( is=>'rw', isa=>'Str', required=>1 );
+has directory => ( rw, isa=>Str, required );
 
 1;
 __END__
