@@ -40,6 +40,8 @@ following classes that you can query with perldoc:
 
 =item * L<Audio::MPD::Common::Time>
 
+=item * L<Audio::MPD::Common::Types>
+
 =back
 
 
@@ -47,18 +49,36 @@ Note that those modules should not be of any use outside the two mpd
 modules afore-mentioned.
 
 
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-audio-mpd-common at
-rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Audio-MPD-Common>.
-I will be notified, and then you'll automatically be notified of
-progress on your bug as I make changes.
-
-
 =head1 SEE ALSO
 
-You may want to see the modules really accessing MPD:
+You can look for information on this module at:
+
+=over 4
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Audio-MPD-Common>
+
+=item * See open / report bugs
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Audio-MPD-Common>
+
+=item * Git repository
+
+L<http://github.com/jquelin/audio-mpd-common.git>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Audio-MPD-Common>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/Audio-MPD-Common>
+
+=back
+
+
+You may want to look at the modules really accessing MPD:
 
 =over 4
 
@@ -67,25 +87,3 @@ You may want to see the modules really accessing MPD:
 =item * L<POE::Component::Client::MPD>
 
 =back
-
-
-You can also look for information on this module at:
-
-=over 4
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Audio-MPD-Common>
-
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Audio-MPD-Common>
-
-
-=item * Open bugs
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Audio-MPD-Common>
-
-=back
-
