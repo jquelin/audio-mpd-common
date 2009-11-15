@@ -6,6 +6,9 @@ package Audio::MPD::Common::Status;
 # ABSTRACT: class representing MPD status
 
 use Moose;
+use MooseX::Has::Sugar;
+use MooseX::Types::Moose qw{ Bool Int Str };
+
 use Audio::MPD::Common::Time;
 use Audio::MPD::Common::Types;
 
@@ -74,20 +77,20 @@ The crossfade in seconds.
 
 =cut
 
-has audio          => ( is=>'ro', isa=>'Str' );
-has bitrate        => ( is=>'ro', isa=>'Int' );
-has error          => ( is=>'ro', isa=>'Str' );
-has playlist       => ( is=>'ro', isa=>'Int' );
-has playlistlength => ( is=>'ro', isa=>'Int' );
-has random         => ( is=>'ro', isa=>'Bool' );
-has repeat         => ( is=>'ro', isa=>'Bool' );
-has songid         => ( is=>'ro', isa=>'Int' );
-has song           => ( is=>'ro', isa=>'Int' );
-has state          => ( is=>'ro', isa=>'State' );
-has time           => ( is=>'ro', isa=>'Audio::MPD::Common::Time', coerce=>1 );
-has updating_db    => ( is=>'ro', isa=>'Int' );
-has volume         => ( is=>'ro', isa=>'Int' );
-has xfade          => ( is=>'ro', isa=>'Int' );
+has audio          => ( ro, isa=>Str  );
+has bitrate        => ( ro, isa=>Int  );
+has error          => ( ro, isa=>Str  );
+has playlist       => ( ro, isa=>Int  );
+has playlistlength => ( ro, isa=>Int  );
+has random         => ( ro, isa=>Bool );
+has repeat         => ( ro, isa=>Bool );
+has songid         => ( ro, isa=>Int  );
+has song           => ( ro, isa=>Int  );
+has state          => ( ro, isa=>'State' );
+has time           => ( ro, isa=>'Audio::MPD::Common::Time', coerce );
+has updating_db    => ( ro, isa=>Int  );
+has volume         => ( ro, isa=>Int  );
+has xfade          => ( ro, isa=>Int  );
 
 
 1;
