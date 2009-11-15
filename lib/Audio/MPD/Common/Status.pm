@@ -6,16 +6,8 @@ package Audio::MPD::Common::Status;
 # ABSTRACT: class representing MPD status
 
 use Moose;
-use Moose::Util::TypeConstraints;
 use Audio::MPD::Common::Time;
-
-
-# -- private types
-
-enum 'State' => qw{ play stop pause };
-coerce 'Audio::MPD::Common::Time'
-    => from 'Str'
-    => via { Audio::MPD::Common::Time->new(time=>$_) };
+use Audio::MPD::Common::Types;
 
 
 # -- public attributes
