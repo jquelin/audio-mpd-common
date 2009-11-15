@@ -6,6 +6,8 @@ package Audio::MPD::Common::Item::Song;
 # ABSTRACT: a song object with some audio tags
 
 use Moose;
+use MooseX::Has::Sugar;
+use MooseX::Types::Moose qw{ Int Str };
 use Readonly;
 
 use base qw{ Audio::MPD::Common::Item };
@@ -66,18 +68,18 @@ Length of the song in seconds.
 
 =cut
 
-has album  => ( is=>'rw', isa=>'Str' );
-has artist => ( is=>'rw', isa=>'Str' );
-has date   => ( is=>'rw', isa=>'Str' );
-has disc   => ( is=>'rw', isa=>'Str' );
-has file   => ( is=>'rw', isa=>'Str', required=>1 );
-has genre  => ( is=>'rw', isa=>'Str' );
-has id     => ( is=>'rw', isa=>'Int' );
-has name   => ( is=>'rw', isa=>'Str' );
-has pos    => ( is=>'rw', isa=>'Int' );
-has title  => ( is=>'rw', isa=>'Str' );
-has track  => ( is=>'rw', isa=>'Str' );
-has time   => ( is=>'rw', isa=>'Int' );
+has album  => ( rw, isa=>Str );
+has artist => ( rw, isa=>Str );
+has date   => ( rw, isa=>Str );
+has disc   => ( rw, isa=>Str );
+has file   => ( rw, isa=>Str, required );
+has genre  => ( rw, isa=>Str );
+has id     => ( rw, isa=>Int );
+has name   => ( rw, isa=>Str );
+has pos    => ( rw, isa=>Int );
+has title  => ( rw, isa=>Str );
+has track  => ( rw, isa=>Str );
+has time   => ( rw, isa=>Int );
 
 
 # -- public methods
