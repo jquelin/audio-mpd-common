@@ -6,8 +6,6 @@ package Audio::MPD::Common::Types;
 # ABSTRACT: types used in the distribution
 
 use Moose::Util::TypeConstraints;
-use Sub::Exporter;
-use Sub::Exporter -setup => { exports => [ qw{ State } ] };
 
 use Audio::MPD::Common::Time;
 
@@ -17,17 +15,15 @@ coerce 'Audio::MPD::Common::Time'
     => from 'Str'
     => via { Audio::MPD::Common::Time->new(time=>$_) };
 
-
 1;
 __END__
 
 =head1 DESCRIPTION
 
 This module implements the specific types used by the distribution, and
-exports them. It is using L<Sub::Exporter> underneath, so you can use
-all the shenanigans to change the export names.
+exports them (exporting is done by L<Moose::Util::TypeConstraints>).
 
-Current types defined and exported:
+Current types defined:
 
 =over 4
 
