@@ -2,6 +2,10 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+1.100430  2010-02-12 12:55:26 Europe/Paris
+ - WARNING: no more makefile.pl supplied, only a build.pl
+ - sub::exporter no more used internally
+
 1.093190 Sun Nov 15 12:14:23 2009
  - isolating types in amc:types
  - sweetening code with moosex::has::sugar
