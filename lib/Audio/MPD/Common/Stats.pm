@@ -58,7 +58,7 @@ __END__
 
 The MPD server maintains some general information. Those information can
 be queried with the mpd modules. Some of those information are served to
-you as an L<Audio::MPD::Common::Status> object.
+you as an L<Audio::MPD::Common::Stats> object.
 
 An L<Audio::MPD::Common::Stats> object does B<not> update itself
 regularly, and thus should be used immediately.
