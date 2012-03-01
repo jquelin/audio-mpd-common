@@ -1,12 +1,33 @@
+#
+# This file is part of Audio-MPD-Common
+#
+# This software is copyright (c) 2007 by Jerome Quelin.
+#
+# This is free software; you can redistribute it and/or modify it under
+# the same terms as the Perl 5 programming language system itself.
+#
 use 5.008;
 use strict;
 use warnings;
 
 package Audio::MPD::Common;
+{
+  $Audio::MPD::Common::VERSION = '1.120610';
+}
 # ABSTRACT: common helper classes for mpd
 
 1;
-__END__
+
+
+=pod
+
+=head1 NAME
+
+Audio::MPD::Common - common helper classes for mpd
+
+=head1 VERSION
+
+version 1.120610
 
 =head1 DESCRIPTION
 
@@ -44,10 +65,8 @@ following classes that you can query with perldoc:
 
 =back
 
-
 Note that those modules should not be of any use outside the two mpd
 modules afore-mentioned.
-
 
 =head1 SEE ALSO
 
@@ -77,7 +96,6 @@ L<http://cpanratings.perl.org/d/Audio-MPD-Common>
 
 =back
 
-
 You may want to look at the modules really accessing MPD:
 
 =over 4
@@ -87,3 +105,20 @@ You may want to look at the modules really accessing MPD:
 =item * L<POE::Component::Client::MPD>
 
 =back
+
+=head1 AUTHOR
+
+Jerome Quelin
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2007 by Jerome Quelin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
+__END__
+

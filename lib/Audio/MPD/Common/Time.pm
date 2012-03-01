@@ -1,8 +1,19 @@
+#
+# This file is part of Audio-MPD-Common
+#
+# This software is copyright (c) 2007 by Jerome Quelin.
+#
+# This is free software; you can redistribute it and/or modify it under
+# the same terms as the Perl 5 programming language system itself.
+#
 use 5.008;
 use strict;
 use warnings;
 
 package Audio::MPD::Common::Time;
+{
+  $Audio::MPD::Common::Time::VERSION = '1.120610';
+}
 # ABSTRACT: class representing time of current song
 
 use Moose 0.92; # need hash trait
@@ -10,71 +21,11 @@ use Moose 0.92; # need hash trait
 
 # -- attributes
 
-=attr $time->time;
-
-The time passed to the constructor, used to compute all others values
-(see methods). It is the time value (on the "time" line) of what the MPD
-server returns to the status command. Defaults to C<0:0>.
-
-=cut
 
 has time => ( is=>'ro', isa=>'Str', default=>'0:0' );
 
 
 
-=method my $str = $time->sofar;
-
-Return elapsed C<$time> (C<minutes:seconds> format).
-
-=method my $str = $time->left;
-
-Return remaining C<$time> (C<minutes:seconds> format).
-
-=method my $str = $time->left;
-
-Return total C<$time> (C<minutes:seconds> format).
-
-=method my $percent = $time->percent;
-
-Return elapsed C<$time> (percentage, 1 digit).
-
-=method my $secs = $time->seconds_sofar;
-
-Return elapsed C<$time> in seconds.
-
-=method my $secs = $time->seconds_left;
-
-Return remaining C<$time> in seconds.
-
-=method my $secs = $time->seconds_total;
-
-Return total C<$time> in seconds.
-
-=method my $mins = $time->sofar_mins;
-
-Return minutes part of elapsed C<$time>.
-
-=method my $secs = $time->sofar_secs;
-
-Return seconds part of elapsed C<$time>.
-
-=method my $mins = $time->left_mins;
-
-Return minutes part of remaining C<$time>.
-
-=method my $secs = $time->left_secs;
-
-Return seconds part of remaining C<$time>.
-
-=method my $mins = $time->total_mins;
-
-Return minutes part of total C<$time>.
-
-=method my $mins = $time->total_secs;
-
-Return seconds part of total C<$time>.
-
-=cut
 
 # _cooked_values contains all the computed values.
 has _cooked_values => (
@@ -149,8 +100,17 @@ sub _build__cooked_values {
 
 
 1;
-__END__
 
+
+=pod
+
+=head1 NAME
+
+Audio::MPD::Common::Time - class representing time of current song
+
+=head1 VERSION
+
+version 1.120610
 
 =head1 DESCRIPTION
 
@@ -164,4 +124,83 @@ regularly, and thus should be used immediately.
 
 Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Time>
 object directly - use the mpd modules instead.
+
+=head1 ATTRIBUTES
+
+=head2 $time->time;
+
+The time passed to the constructor, used to compute all others values
+(see methods). It is the time value (on the "time" line) of what the MPD
+server returns to the status command. Defaults to C<0:0>.
+
+=head1 METHODS
+
+=head2 my $str = $time->sofar;
+
+Return elapsed C<$time> (C<minutes:seconds> format).
+
+=head2 my $str = $time->left;
+
+Return remaining C<$time> (C<minutes:seconds> format).
+
+=head2 my $str = $time->left;
+
+Return total C<$time> (C<minutes:seconds> format).
+
+=head2 my $percent = $time->percent;
+
+Return elapsed C<$time> (percentage, 1 digit).
+
+=head2 my $secs = $time->seconds_sofar;
+
+Return elapsed C<$time> in seconds.
+
+=head2 my $secs = $time->seconds_left;
+
+Return remaining C<$time> in seconds.
+
+=head2 my $secs = $time->seconds_total;
+
+Return total C<$time> in seconds.
+
+=head2 my $mins = $time->sofar_mins;
+
+Return minutes part of elapsed C<$time>.
+
+=head2 my $secs = $time->sofar_secs;
+
+Return seconds part of elapsed C<$time>.
+
+=head2 my $mins = $time->left_mins;
+
+Return minutes part of remaining C<$time>.
+
+=head2 my $secs = $time->left_secs;
+
+Return seconds part of remaining C<$time>.
+
+=head2 my $mins = $time->total_mins;
+
+Return minutes part of total C<$time>.
+
+=head2 my $mins = $time->total_secs;
+
+Return seconds part of total C<$time>.
+
+=head1 AUTHOR
+
+Jerome Quelin
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2007 by Jerome Quelin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
+__END__
+
 

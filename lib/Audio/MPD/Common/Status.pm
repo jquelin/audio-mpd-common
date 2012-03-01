@@ -1,8 +1,19 @@
+#
+# This file is part of Audio-MPD-Common
+#
+# This software is copyright (c) 2007 by Jerome Quelin.
+#
+# This is free software; you can redistribute it and/or modify it under
+# the same terms as the Perl 5 programming language system itself.
+#
 use 5.008;
 use strict;
 use warnings;
 
 package Audio::MPD::Common::Status;
+{
+  $Audio::MPD::Common::Status::VERSION = '1.120610';
+}
 # ABSTRACT: class representing MPD status
 
 use Moose;
@@ -15,67 +26,6 @@ use Audio::MPD::Common::Types;
 
 # -- public attributes
 
-=attr $status->audio;
-
-A string with the sample rate of the song currently playing, number of
-bits of the output and number of channels (2 for stereo) - separated
-by a colon.
-
-=attr $status->bitrate;
-
-The instantaneous bitrate in kbps.
-
-=attr $status->error;
-
-May appear in special error cases, such as when disabling output.
-
-=attr $status->playlist;
-
-The playlist version number, that changes every time the playlist
-is updated.
-
-=attr $status->playlistlength;
-
-The number of songs in the playlist.
-
-=attr $status->random;
-
-Whether the playlist is read randomly or not.
-
-=attr $status->repeat;
-
-Whether the song is repeated or not.
-
-=attr $status->song;
-
-The offset of the song currently played in the playlist.
-
-=attr $status->songid;
-
-The song id (MPD id) of the song currently played.
-
-=attr $status->state;
-
-The state of MPD server. Either C<play>, C<stop> or C<pause>.
-
-=attr $status->time;
-
-An L<Audio::MPD::Common::Time> object, representing the time elapsed /
-remainging and total. See the associated pod for more details.
-
-=attr $status->updating_db;
-
-An integer, representing the current update job.
-
-=attr $status->volume;
-
-The current MPD volume - an integer between 0 and 100.
-
-=attr $status->xfade;
-
-The crossfade in seconds.
-
-=cut
 
 has audio          => ( ro, isa=>Str  );
 has bitrate        => ( ro, isa=>Int  );
@@ -94,7 +44,17 @@ has xfade          => ( ro, isa=>Int  );
 
 
 1;
-__END__
+
+
+=pod
+
+=head1 NAME
+
+Audio::MPD::Common::Status - class representing MPD status
+
+=head1 VERSION
+
+version 1.120610
 
 =head1 DESCRIPTION
 
@@ -107,3 +67,82 @@ regularly, and thus should be used immediately.
 
 Note: one should B<never> ever instantiate an L<Audio::MPD::Common::Status>
 object directly - use the mpd modules instead.
+
+=head1 ATTRIBUTES
+
+=head2 $status->audio;
+
+A string with the sample rate of the song currently playing, number of
+bits of the output and number of channels (2 for stereo) - separated
+by a colon.
+
+=head2 $status->bitrate;
+
+The instantaneous bitrate in kbps.
+
+=head2 $status->error;
+
+May appear in special error cases, such as when disabling output.
+
+=head2 $status->playlist;
+
+The playlist version number, that changes every time the playlist
+is updated.
+
+=head2 $status->playlistlength;
+
+The number of songs in the playlist.
+
+=head2 $status->random;
+
+Whether the playlist is read randomly or not.
+
+=head2 $status->repeat;
+
+Whether the song is repeated or not.
+
+=head2 $status->song;
+
+The offset of the song currently played in the playlist.
+
+=head2 $status->songid;
+
+The song id (MPD id) of the song currently played.
+
+=head2 $status->state;
+
+The state of MPD server. Either C<play>, C<stop> or C<pause>.
+
+=head2 $status->time;
+
+An L<Audio::MPD::Common::Time> object, representing the time elapsed /
+remainging and total. See the associated pod for more details.
+
+=head2 $status->updating_db;
+
+An integer, representing the current update job.
+
+=head2 $status->volume;
+
+The current MPD volume - an integer between 0 and 100.
+
+=head2 $status->xfade;
+
+The crossfade in seconds.
+
+=head1 AUTHOR
+
+Jerome Quelin
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2007 by Jerome Quelin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
+__END__
+
