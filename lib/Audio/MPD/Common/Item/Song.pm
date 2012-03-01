@@ -46,6 +46,10 @@ Genre of the song.
 
 Id of the song in MPD's database.
 
+=attr $song->last_modified;
+
+Last time the song was modified.
+
 =attr $song->name;
 
 Name of the song (for http streams).
@@ -74,6 +78,7 @@ has date   => ( rw, isa=>Str );
 has disc   => ( rw, isa=>Str );
 has file   => ( rw, isa=>Str, required );
 has genre  => ( rw, isa=>Str );
+has last_modified => ( rw, isa=>Str );
 has id     => ( rw, isa=>Int );
 has name   => ( rw, isa=>Str );
 has pos    => ( rw, isa=>Int );
