@@ -107,22 +107,22 @@ Length of the song in seconds. (format code: %l)
 
 =cut
 
-has album  => ( rw, isa=>Str );
-has albumartist => ( rw, isa=>Str );
-has artist => ( rw, isa=>Str );
-has composer => ( rw, isa=>Str );
-has date   => ( rw, isa=>Str );
-has disc   => ( rw, isa=>Str );
-has file   => ( rw, isa=>Str, required );
-has genre  => ( rw, isa=>Str );
-has last_modified => ( rw, isa=>Str );
-has id     => ( rw, isa=>Int );
-has name   => ( rw, isa=>Str );
-has pos    => ( rw, isa=>Int );
-has performer => ( rw, isa=>Str );
-has title  => ( rw, isa=>Str );
-has track  => ( rw, isa=>Str );
-has time   => ( rw, isa=>Int );
+has album         => ( rw, isa => Str );
+has albumartist   => ( rw, isa => Str );
+has artist        => ( rw, isa => Str );
+has composer      => ( rw, isa => Str );
+has date          => ( rw, isa => Str );
+has disc          => ( rw, isa => Str );
+has file          => ( rw, isa => Str, required );
+has genre         => ( rw, isa => Str );
+has last_modified => ( rw, isa => Str );
+has id            => ( rw, isa => Int );
+has name          => ( rw, isa => Str );
+has pos           => ( rw, isa => Int );
+has performer     => ( rw, isa => Str );
+has title         => ( rw, isa => Str );
+has track         => ( rw, isa => Str );
+has time          => ( rw, isa => Int );
 
 
 # -- public methods
