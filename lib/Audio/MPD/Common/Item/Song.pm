@@ -12,7 +12,7 @@ use warnings;
 
 package Audio::MPD::Common::Item::Song;
 {
-  $Audio::MPD::Common::Item::Song::VERSION = '1.120880';
+  $Audio::MPD::Common::Item::Song::VERSION = '1.120881';
 }
 # ABSTRACT: a song object with some audio tags
 
@@ -25,6 +25,7 @@ use String::Formatter method_stringf => {
     codes => {
         A => sub { $_[0]->albumartist },
         a => sub { $_[0]->artist },
+        C => sub { $_[0]->composer },
         D => sub { $_[0]->disc },
         d => sub { $_[0]->album },
         f => sub { $_[0]->file },
@@ -35,6 +36,7 @@ use String::Formatter method_stringf => {
         m => sub { $_[0]->last_modified },
         N => sub { $_[0]->name },
         n => sub { $_[0]->track },
+        P => sub { $_[0]->performer },
         p => sub { $_[0]->pos },
         t => sub { $_[0]->title },
     },
@@ -49,20 +51,22 @@ Readonly my $SEP => ' = ';
 # -- public attributes
 
 
-has album  => ( rw, isa=>Str );
-has album_artist => ( rw, isa=>Str );
-has artist => ( rw, isa=>Str );
-has date   => ( rw, isa=>Str );
-has disc   => ( rw, isa=>Str );
-has file   => ( rw, isa=>Str, required );
-has genre  => ( rw, isa=>Str );
-has last_modified => ( rw, isa=>Str );
-has id     => ( rw, isa=>Int );
-has name   => ( rw, isa=>Str );
-has pos    => ( rw, isa=>Int );
-has title  => ( rw, isa=>Str );
-has track  => ( rw, isa=>Str );
-has time   => ( rw, isa=>Int );
+has album         => ( rw, isa => Str );
+has albumartist   => ( rw, isa => Str );
+has artist        => ( rw, isa => Str );
+has composer      => ( rw, isa => Str );
+has date          => ( rw, isa => Str );
+has disc          => ( rw, isa => Str );
+has file          => ( rw, isa => Str, required );
+has genre         => ( rw, isa => Str );
+has last_modified => ( rw, isa => Str );
+has id            => ( rw, isa => Int );
+has name          => ( rw, isa => Str );
+has pos           => ( rw, isa => Int );
+has performer     => ( rw, isa => Str );
+has title         => ( rw, isa => Str );
+has track         => ( rw, isa => Str );
+has time          => ( rw, isa => Int );
 
 
 # -- public methods
@@ -95,7 +99,7 @@ Audio::MPD::Common::Item::Song - a song object with some audio tags
 
 =head1 VERSION
 
-version 1.120880
+version 1.120881
 
 =head1 DESCRIPTION
 
@@ -116,9 +120,13 @@ Album of the song. (format code: %d)
 
 Artist of the song. (format code: %a)
 
-=head2 album_artist
+=head2 albumartist
 
 Artist of the album. (format code: %A)
+
+=head2 composer
+
+Song composer. (format code: %C)
 
 =head2 date
 
@@ -149,6 +157,10 @@ Last time the song was modified. (format code: %m)
 =head2 name
 
 Name of the song (for http streams). (format code: %N)
+
+=head2 performer
+
+Song performer. (format code: %P)
 
 =head2 pos
 

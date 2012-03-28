@@ -1,5 +1,9 @@
 Revision history for Audio-MPD-Common
 
+1.120881  2012-03-28 17:54:21 Europe/Paris
+ - new amci:song attributes: composer, performer
+ - amci:song attribute album_artist renamed to albumartist
+
 1.120880  2012-03-28 10:57:23 Europe/Paris
  - new amci:song attribute: album_artist (rt#76057)
  - allow a format to control as_string in amci:song

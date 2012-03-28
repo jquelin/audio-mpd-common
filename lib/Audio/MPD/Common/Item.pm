@@ -12,7 +12,7 @@ use warnings;
 
 package Audio::MPD::Common::Item;
 {
-  $Audio::MPD::Common::Item::VERSION = '1.120880';
+  $Audio::MPD::Common::Item::VERSION = '1.120881';
 }
 # ABSTRACT: a generic collection item
 
@@ -47,7 +47,7 @@ Audio::MPD::Common::Item - a generic collection item
 
 =head1 VERSION
 
-version 1.120880
+version 1.120881
 
 =head1 SYNOPSIS
 
