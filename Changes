@@ -2,6 +2,7 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
  - new amci:song attribute: album_artist (rt#76057)
+ - allow a format to control as_string in amci:song
 
 1.120610  2012-03-01 09:36:00 Europe/Paris
  - new amci:song attribute: last_modified

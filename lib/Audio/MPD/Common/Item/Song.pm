@@ -9,6 +9,25 @@ use Moose;
 use MooseX::Has::Sugar;
 use MooseX::Types::Moose qw{ Int Str };
 use Readonly;
+use String::Formatter method_stringf => {
+    -as => '_stringf',
+    codes => {
+        A => sub { $_[0]->albumartist },
+        a => sub { $_[0]->artist },
+        D => sub { $_[0]->disc },
+        d => sub { $_[0]->album },
+        f => sub { $_[0]->file },
+        g => sub { $_[0]->genre },
+        i => sub { $_[0]->id },
+        l => sub { $_[0]->time },
+        M => sub { $_[0]->date },
+        m => sub { $_[0]->last_modified },
+        N => sub { $_[0]->name },
+        n => sub { $_[0]->track },
+        p => sub { $_[0]->pos },
+        t => sub { $_[0]->title },
+    },
+};
 
 use base qw{ Audio::MPD::Common::Item };
 use overload '""' => \&as_string;
@@ -18,61 +37,63 @@ Readonly my $SEP => ' = ';
 
 # -- public attributes
 
-=attr $song->album;
+=attr album
 
-Album of the song.
+Album of the song. (format code: %d)
 
-=attr $song->artist;
+=attr artist
 
-Artist of the song.
+Artist of the song. (format code: %a)
 
-=attr $song->album_artist;
+=attr album_artist
 
-Artist of the album.
+Artist of the album. (format code: %A)
 
-=attr $song->date;
+=attr date
 
-Last modification date of the song.
+Last modification date of the song. (format code: %M)
 
-=attr $song->disc;
+=attr disc
 
 Disc number of the album. This is a string to allow tags such as C<1/2>.
+(format code: %D)
 
-=attr $song->file;
+=attr file
 
-Path to the song. Only attribute which will always be defined.
+Path to the song. Only attribute which will always be defined. (format
+code: %f)
 
-=attr $song->genre;
+=attr genre
 
-Genre of the song.
+Genre of the song. (format code: %g)
 
-=attr $song->id;
+=attr id
 
-Id of the song in MPD's database.
+Id of the song in MPD's database. (format code: %i)
 
-=attr $song->last_modified;
+=attr last_modified
 
-Last time the song was modified.
+Last time the song was modified. (format code: %m)
 
-=attr $song->name;
+=attr name
 
-Name of the song (for http streams).
+Name of the song (for http streams). (format code: %N)
 
-=attr $song->pos;
+=attr pos
 
-Position of the song in the playlist.
+Position of the song in the playlist. (format code: %p)
 
-=attr $song->title;
+=attr title
 
-Title of the song.
+Title of the song. (format code: %t)
 
-=attr $song->track;
+=attr track
 
-Track number of the song.
+Track number of the song. (format code: %n)
 
-=attr $song->time;
+=attr time
 
-Length of the song in seconds.
+Length of the song in seconds. (format code: %l)
 
 =cut
 
@@ -94,9 +115,12 @@ has time   => ( rw, isa=>Int );
 
 # -- public methods
 
-=method my $str = $song->as_string;
+=method as_string
 
-Return a string representing $song. This string will be:
+    my $str = $song->as_string( [$format] );
+
+Return a string representing $song. If C<$format> is specified, use it
+to format the string. Otherwise, the string returned will be:
 
 =over 4
 
@@ -115,11 +139,15 @@ possibility always exist of course, since it's a path.
 
 This method is also used to automatically stringify the C<$song>.
 
+B<WARNING:> the format codes are not yet definitive and may be subject
+to change!
+
 =cut
 
 sub as_string {
-    my ($self) = @_;
+    my ($self, $format) = @_;
 
+    return _stringf($format, $self) if $format;
     return $self->file unless defined $self->title;
     my $str = $self->title;
     return $str unless defined $self->artist;
@@ -130,6 +158,7 @@ sub as_string {
         $self->track,
         $str;
 }
+
 
 1;
 __END__
