@@ -12,7 +12,7 @@ use warnings;
 
 package Audio::MPD::Common::Time;
 {
-  $Audio::MPD::Common::Time::VERSION = '1.120610';
+  $Audio::MPD::Common::Time::VERSION = '1.120880';
 }
 # ABSTRACT: class representing time of current song
 
@@ -110,7 +110,7 @@ Audio::MPD::Common::Time - class representing time of current song
 
 =head1 VERSION
 
-version 1.120610
+version 1.120880
 
 =head1 DESCRIPTION
 

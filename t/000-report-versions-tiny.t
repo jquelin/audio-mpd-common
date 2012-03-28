@@ -56,6 +56,7 @@ eval { $v .= pmver('Moose::Util::TypeConstraints','any version') };
 eval { $v .= pmver('MooseX::Has::Sugar','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('Readonly','any version') };
+eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('base','any version') };
 eval { $v .= pmver('overload','any version') };

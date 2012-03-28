@@ -12,7 +12,7 @@ use warnings;
 
 package Audio::MPD::Common::Item::Song;
 {
-  $Audio::MPD::Common::Item::Song::VERSION = '1.120610';
+  $Audio::MPD::Common::Item::Song::VERSION = '1.120880';
 }
 # ABSTRACT: a song object with some audio tags
 
@@ -20,6 +20,25 @@ use Moose;
 use MooseX::Has::Sugar;
 use MooseX::Types::Moose qw{ Int Str };
 use Readonly;
+use String::Formatter method_stringf => {
+    -as => '_stringf',
+    codes => {
+        A => sub { $_[0]->albumartist },
+        a => sub { $_[0]->artist },
+        D => sub { $_[0]->disc },
+        d => sub { $_[0]->album },
+        f => sub { $_[0]->file },
+        g => sub { $_[0]->genre },
+        i => sub { $_[0]->id },
+        l => sub { $_[0]->time },
+        M => sub { $_[0]->date },
+        m => sub { $_[0]->last_modified },
+        N => sub { $_[0]->name },
+        n => sub { $_[0]->track },
+        p => sub { $_[0]->pos },
+        t => sub { $_[0]->title },
+    },
+};
 
 use base qw{ Audio::MPD::Common::Item };
 use overload '""' => \&as_string;
@@ -31,6 +50,7 @@ Readonly my $SEP => ' = ';
 
 
 has album  => ( rw, isa=>Str );
+has album_artist => ( rw, isa=>Str );
 has artist => ( rw, isa=>Str );
 has date   => ( rw, isa=>Str );
 has disc   => ( rw, isa=>Str );
@@ -49,8 +69,9 @@ has time   => ( rw, isa=>Int );
 
 
 sub as_string {
-    my ($self) = @_;
+    my ($self, $format) = @_;
 
+    return _stringf($format, $self) if $format;
     return $self->file unless defined $self->title;
     my $str = $self->title;
     return $str unless defined $self->artist;
@@ -61,6 +82,7 @@ sub as_string {
         $self->track,
         $str;
 }
+
 
 1;
 
@@ -73,7 +95,7 @@ Audio::MPD::Common::Item::Song - a song object with some audio tags
 
 =head1 VERSION
 
-version 1.120610
+version 1.120880
 
 =head1 DESCRIPTION
 
@@ -86,63 +108,72 @@ constructor.
 
 =head1 ATTRIBUTES
 
-=head2 $song->album;
+=head2 album
 
-Album of the song.
+Album of the song. (format code: %d)
 
-=head2 $song->artist;
+=head2 artist
 
-Artist of the song.
+Artist of the song. (format code: %a)
 
-=head2 $song->date;
+=head2 album_artist
 
-Last modification date of the song.
+Artist of the album. (format code: %A)
 
-=head2 $song->disc;
+=head2 date
+
+Last modification date of the song. (format code: %M)
+
+=head2 disc
 
 Disc number of the album. This is a string to allow tags such as C<1/2>.
+(format code: %D)
 
-=head2 $song->file;
+=head2 file
 
-Path to the song. Only attribute which will always be defined.
+Path to the song. Only attribute which will always be defined. (format
+code: %f)
 
-=head2 $song->genre;
+=head2 genre
 
-Genre of the song.
+Genre of the song. (format code: %g)
 
-=head2 $song->id;
+=head2 id
 
-Id of the song in MPD's database.
+Id of the song in MPD's database. (format code: %i)
 
-=head2 $song->last_modified;
+=head2 last_modified
 
-Last time the song was modified.
+Last time the song was modified. (format code: %m)
 
-=head2 $song->name;
+=head2 name
 
-Name of the song (for http streams).
+Name of the song (for http streams). (format code: %N)
 
-=head2 $song->pos;
+=head2 pos
 
-Position of the song in the playlist.
+Position of the song in the playlist. (format code: %p)
 
-=head2 $song->title;
+=head2 title
 
-Title of the song.
+Title of the song. (format code: %t)
 
-=head2 $song->track;
+=head2 track
 
-Track number of the song.
+Track number of the song. (format code: %n)
 
-=head2 $song->time;
+=head2 time
 
-Length of the song in seconds.
+Length of the song in seconds. (format code: %l)
 
 =head1 METHODS
 
-=head2 my $str = $song->as_string;
+=head2 as_string
 
-Return a string representing $song. This string will be:
+    my $str = $song->as_string( [$format] );
+
+Return a string representing $song. If C<$format> is specified, use it
+to format the string. Otherwise, the string returned will be:
 
 =over 4
 
@@ -160,6 +191,9 @@ Return a string representing $song. This string will be:
 possibility always exist of course, since it's a path.
 
 This method is also used to automatically stringify the C<$song>.
+
+B<WARNING:> the format codes are not yet definitive and may be subject
+to change!
 
 =head1 AUTHOR
 

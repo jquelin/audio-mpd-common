@@ -12,7 +12,7 @@ use strict;
 use warnings;
 
 use Audio::MPD::Common::Item;
-use Test::More tests => 24;
+use Test::More tests => 25;
 
 my ($i, $output, @output, %params);
 
@@ -48,6 +48,7 @@ isa_ok( $i, 'Audio::MPD::Common::Item', 'song inherits from item' );
 
 #
 # testing as_string from amc::item::song.
+is( $i->as_string("%t (%l)"), "Blah! (234)", "as_string with a format" );
 is( $i->as_string, 'Frobnizer = 26 = Foo Bar = Blah!', 'as_string() with all tags' );
 delete $params{Track};
 $i = Audio::MPD::Common::Item->new( %params );

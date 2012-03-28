@@ -20,7 +20,7 @@ my %module_build_args = (
     "Jerome Quelin"
   ],
   "dist_name" => "Audio-MPD-Common",
-  "dist_version" => "1.120610",
+  "dist_version" => "1.120880",
   "license" => "perl",
   "module_name" => "Audio::MPD::Common",
   "recommends" => {},
@@ -31,6 +31,7 @@ my %module_build_args = (
     "MooseX::Has::Sugar" => 0,
     "MooseX::Types::Moose" => 0,
     "Readonly" => 0,
+    "String::Formatter" => 0,
     "base" => 0,
     "overload" => 0,
     "perl" => "5.008",
