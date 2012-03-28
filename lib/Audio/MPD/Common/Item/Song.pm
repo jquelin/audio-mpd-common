@@ -47,7 +47,7 @@ Album of the song. (format code: %d)
 
 Artist of the song. (format code: %a)
 
-=attr album_artist
+=attr albumartist
 
 Artist of the album. (format code: %A)
 
@@ -108,7 +108,7 @@ Length of the song in seconds. (format code: %l)
 =cut
 
 has album  => ( rw, isa=>Str );
-has album_artist => ( rw, isa=>Str );
+has albumartist => ( rw, isa=>Str );
 has artist => ( rw, isa=>Str );
 has composer => ( rw, isa=>Str );
 has date   => ( rw, isa=>Str );
