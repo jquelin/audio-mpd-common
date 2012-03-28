@@ -26,6 +26,10 @@ Album of the song.
 
 Artist of the song.
 
+=attr $song->album_artist;
+
+Artist of the album.
+
 =attr $song->date;
 
 Last modification date of the song.
@@ -73,6 +77,7 @@ Length of the song in seconds.
 =cut
 
 has album  => ( rw, isa=>Str );
+has album_artist => ( rw, isa=>Str );
 has artist => ( rw, isa=>Str );
 has date   => ( rw, isa=>Str );
 has disc   => ( rw, isa=>Str );
