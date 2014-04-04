@@ -9,7 +9,7 @@ use Moose::Util::TypeConstraints;
 
 use Audio::MPD::Common::Time;
 
-enum 'State' => qw{ play stop pause };
+enum 'State' => [ qw{ play stop pause } ];
 
 coerce 'Audio::MPD::Common::Time'
     => from 'Str'

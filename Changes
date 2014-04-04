@@ -1,6 +1,8 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+ - moving to @Author::JQUELIN for dzil setup
+ - fix Moose enum (rt#90670)
 
 1.120881  2012-03-28 17:54:21 Europe/Paris
  - new amci:song attributes: composer, performer
