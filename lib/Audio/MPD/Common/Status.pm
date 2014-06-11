@@ -90,7 +90,7 @@ has state          => ( ro, isa=>'State' );
 has time           => ( ro, isa=>'Audio::MPD::Common::Time', coerce );
 has updating_db    => ( ro, isa=>Int  );
 has volume         => ( ro, isa=>Int  );
-has xfade          => ( ro, isa=>Int  );
+has xfade          => ( ro, isa=>Int, default=>0 );
 
 
 1;

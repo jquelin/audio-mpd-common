@@ -1,6 +1,7 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+ - default xfade to 0 (help fix rt#91082)
 
 2.000     2014-04-04 13:45:48+02:00 Europe/Paris
  - moving to @Author::JQUELIN for dzil setup
