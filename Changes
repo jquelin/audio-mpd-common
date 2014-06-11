@@ -1,6 +1,7 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+ - new accessor last_modified for amci::directory
 
 2.001     2014-06-11 14:27:40+02:00 Europe/Paris
  - default xfade to 0 (help fix rt#91082)

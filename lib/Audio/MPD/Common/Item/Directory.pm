@@ -18,9 +18,14 @@ use base qw{ Audio::MPD::Common::Item };
 
 The path to the item's directory.
 
+=attr $item->last_modified;
+
+Last modification date.
+
 =cut
 
-has directory => ( rw, isa=>Str, required );
+has directory     => ( rw, isa=>Str, required );
+has last_modified => ( rw, isa=>Str );
 
 1;
 __END__
