@@ -1,6 +1,8 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+
+2.001     2014-06-11 14:27:40+02:00 Europe/Paris
  - default xfade to 0 (help fix rt#91082)
 
 2.000     2014-04-04 13:45:48+02:00 Europe/Paris
