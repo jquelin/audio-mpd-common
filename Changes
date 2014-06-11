@@ -1,6 +1,8 @@
 Revision history for Audio-MPD-Common
 
 {{$NEXT}}
+
+2.002     2014-06-11 15:03:22+02:00 Europe/Paris
  - new accessor last_modified for amci::directory
 
 2.001     2014-06-11 14:27:40+02:00 Europe/Paris
