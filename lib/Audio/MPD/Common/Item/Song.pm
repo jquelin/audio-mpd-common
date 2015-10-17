@@ -28,6 +28,12 @@ use String::Formatter method_stringf => {
         P => sub { $_[0]->performer },
         p => sub { $_[0]->pos },
         t => sub { $_[0]->title },
+        s => sub { $_[0]->artistsort },
+        S => sub { $_[0]->albumartistsort },
+        T => sub { $_[0]->musicbrainz_trackid },
+        I => sub { $_[0]->musicbrainz_albumartistid },
+        B => sub { $_[0]->musicbrainz_albumid },
+        E => sub { $_[0]->musicbrainz_artistid },
     },
 };
 
@@ -123,7 +129,12 @@ has performer     => ( rw, isa => Str );
 has title         => ( rw, isa => Str );
 has track         => ( rw, isa => Str );
 has time          => ( rw, isa => Int );
-
+has artistsort    => ( rw, isa => Str );
+has albumartistsort            => ( rw, isa => Str );
+has musicbrainz_trackid        => ( rw, isa => Str );
+has musicbrainz_albumartistid  => ( rw, isa => Str );
+has musicbrainz_albumid        => ( rw, isa => Str );
+has musicbrainz_artistid       => ( rw, isa => Str );
 
 # -- public methods
 
