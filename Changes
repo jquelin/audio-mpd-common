@@ -2,6 +2,9 @@ Revision history for Audio-MPD-Common
 
 {{$NEXT}}
 
+2.003     2015-11-23 15:04:48+01:00 Europe/Paris
+ - new song attributes (johna)
+
 2.002     2014-06-11 15:03:22+02:00 Europe/Paris
  - new accessor last_modified for amci::directory
 
